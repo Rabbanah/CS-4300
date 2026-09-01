@@ -37,8 +37,18 @@ class SimpleReflexAgent:
         pass
 
     def act(self, percept: Percept) -> Action:
-        # TODO: Implement rules that depend only on the current percept.
-        raise NotImplementedError("Implement SimpleReflexAgent.act")
+        if percept.carrying and percept.destination_here:
+            return Action.DROP_OFF
+
+        if not percept.carrying and percept.package_here:
+            return Action.PICK_UP
+
+        if percept.location == "A":
+            return Action.MOVE_RIGHT
+        if percept.location == "E":
+            return Action.MOVE_LEFT
+
+        return Action.MOVE_RIGHT
 
 
 class ModelBasedReflexAgent:
@@ -48,9 +58,42 @@ class ModelBasedReflexAgent:
         self.reset()
 
     def reset(self) -> None:
-        # TODO: Initialize all episode-specific internal state.
-        pass
+        self.package_loc: str | None = None
+        self.dest_loc: str | None = None
+        self.explore_direction: Action = Action.MOVE_RIGHT
 
     def act(self, percept: Percept) -> Action:
-        # TODO: Update the model from the percept, then apply condition-action rules.
-        raise NotImplementedError("Implement ModelBasedReflexAgent.act")
+        hallway = ["A", "B", "C", "D", "E"]
+        curr_loc = percept.location
+
+        if percept.package_here:
+            self.package_loc = curr_loc
+        if percept.destination_here:
+            self.dest_loc = curr_loc
+        if percept.carrying:
+            self.package_loc = "CARRIED"
+
+        if curr_loc == "A":
+            self.explore_direction = Action.MOVE_RIGHT
+        elif curr_loc == "E":
+            self.explore_direction = Action.MOVE_LEFT
+
+        if percept.carrying and percept.destination_here:
+            return Action.DROP_OFF
+
+        if not percept.carrying and percept.package_here:
+            return Action.PICK_UP
+
+        if percept.carrying and self.dest_loc is not None:
+            if hallway.index(self.dest_loc) > hallway.index(curr_loc):
+                return Action.MOVE_RIGHT
+            elif hallway.index(self.dest_loc) < hallway.index(curr_loc):
+                return Action.MOVE_LEFT
+
+        if not percept.carrying and self.package_loc is not None and self.package_loc != "CARRIED":
+            if hallway.index(self.package_loc) > hallway.index(curr_loc):
+                return Action.MOVE_RIGHT
+            elif hallway.index(self.package_loc) < hallway.index(curr_loc):
+                return Action.MOVE_LEFT
+
+        return self.explore_direction
