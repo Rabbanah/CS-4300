@@ -165,7 +165,6 @@ class UniformCostSearchAgent:
             ),
         )
 
-
 class AStarSearchAgent:
     def heuristic(self, state: RecoveryState) -> int:
         return compute_admissible_heuristic(state)

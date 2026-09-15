@@ -15,7 +15,6 @@ from recovery import (
     ValidationStatus,
 )
 
-
 class StudentRequiredTests(unittest.TestCase):
     def test_action_precondition_and_transition(self) -> None:
         """Test one action precondition and transition."""

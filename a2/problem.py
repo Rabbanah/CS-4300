@@ -16,7 +16,6 @@ from recovery import (
     ValidationStatus,
 )
 
-
 class RecoveryProblem:
     def __init__(self, initial_state: RecoveryState) -> None:
         self.initial_state = initial_state
