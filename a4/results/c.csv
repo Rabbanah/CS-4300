@@ -1,0 +1,17 @@
+stage,focal_agent,focal_color,orange_agent,black_agent,orange_depth,black_depth,orange_seed,black_seed,max_plies,max_llm_calls,max_think_seconds,live,status,exit_status,error,result,reason,plies,orange_utility,black_utility,orange_time,black_time,orange_generated,orange_evaluated,orange_maximum_depth,orange_model_calls,orange_fallback_calls,orange_cache_hits,black_generated,black_evaluated,black_maximum_depth,black_model_calls,black_fallback_calls,black_cache_hits,stdout,stderr
+c,llm_direct,orange,llm_direct,minimax_3,1,1,0,0,60,,3600.0,True,ok,0,,BLACK,win,8,-1,1,3.646759,0.213853,,,,4,0,,256,256,1,,,,"result=BLACK reason=win plies=8 orange_utility=-1 black_utility=1 orange_time=3.646759s black_time=0.213853s
+agent=orange name='Orange Direct LLM' model_calls=4 fallback_calls=0
+agent=black name='Black Minimax 3' generated=256 evaluated=256 maximum_depth=1
+",
+c,llm_direct,black,minimax_3,llm_direct,1,1,0,0,60,,3600.0,True,ok,0,,DRAW,move_limit,60,0,0,1.648785,30.860745,2491,2491,1,,,,,,,30,0,,"result=DRAW reason=move_limit plies=60 orange_utility=0 black_utility=0 orange_time=1.648785s black_time=30.860745s
+agent=orange name='Orange Minimax 3' generated=2491 evaluated=2491 maximum_depth=1
+agent=black name='Black Direct LLM' model_calls=30 fallback_calls=0
+",
+c,llm_direct,orange,llm_direct,minimax_3,1,1,1,0,60,,3600.0,True,ok,0,,BLACK,win,8,-1,1,3.808186,0.225851,,,,4,0,,256,256,1,,,,"result=BLACK reason=win plies=8 orange_utility=-1 black_utility=1 orange_time=3.808186s black_time=0.225851s
+agent=orange name='Orange Direct LLM' model_calls=4 fallback_calls=0
+agent=black name='Black Minimax 3' generated=256 evaluated=256 maximum_depth=1
+",
+c,llm_direct,black,minimax_3,llm_direct,1,1,0,1,60,,3600.0,True,ok,0,,DRAW,move_limit,60,0,0,1.647358,31.704535,2491,2491,1,,,,,,,30,0,,"result=DRAW reason=move_limit plies=60 orange_utility=0 black_utility=0 orange_time=1.647358s black_time=31.704535s
+agent=orange name='Orange Minimax 3' generated=2491 evaluated=2491 maximum_depth=1
+agent=black name='Black Direct LLM' model_calls=30 fallback_calls=0
+",
