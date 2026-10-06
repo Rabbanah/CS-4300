@@ -1,0 +1,55 @@
+stage,position,category,depth,agent,repetition,status,selected_move,root_value,visited_states,expanded_nodes,generated_actions,evaluated_states,pruned_actions,maximum_depth,thinking_time,error_type,error_message
+A,initial,initial,2,measured_minimax,1,ok,g0-f3,-0.0,2736,53,2735,2683,0,2,2.3860760999959894,N/A,N/A
+A,initial,initial,2,alpha_beta_order_1,1,ok,g0-f3,-0.0,681,53,2735,628,2055,2,0.5674371999921277,N/A,N/A
+A,initial,initial,2,alpha_beta_order_2,1,ok,g0-f3,-0.0,306,53,2735,253,2430,2,0.24709619994973764,N/A,N/A
+B,initial,initial,3,alpha_beta_order_1,1,ok,e1-d2,0.0917,16029,640,37460,15389,21432,3,13.483873099961784,N/A,N/A
+B,initial,initial,3,alpha_beta_order_1,2,ok,e1-d2,0.0917,16029,640,37460,15389,21432,3,13.842566600011196,N/A,N/A
+B,initial,initial,3,alpha_beta_order_1,3,ok,e1-d2,0.0917,16029,640,37460,15389,21432,3,13.677251900022384,N/A,N/A
+B,initial,initial,3,alpha_beta_order_2,1,ok,e1-d2,0.0917,4602,417,24019,4185,19418,3,3.7776931999833323,N/A,N/A
+B,initial,initial,3,alpha_beta_order_2,2,ok,e1-d2,0.0917,4602,417,24019,4185,19418,3,3.8086375999846496,N/A,N/A
+B,initial,initial,3,alpha_beta_order_2,3,ok,e1-d2,0.0917,4602,417,24019,4185,19418,3,3.7878996999934316,N/A,N/A
+A,early-a,early game,2,measured_minimax,1,ok,g0-f3,-0.0,3171,57,3170,3114,0,2,2.6207613999722525,N/A,N/A
+A,early-a,early game,2,alpha_beta_order_1,1,ok,g0-f3,-0.0,1044,57,3170,987,2127,2,0.8700622000033036,N/A,N/A
+A,early-a,early game,2,alpha_beta_order_2,1,ok,g0-f3,-0.0,392,57,3170,335,2779,2,0.31175379996420816,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_1,1,ok,d1-c2,0.0917,26310,1015,61979,25295,35670,3,21.958819499996025,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_1,2,ok,d1-c2,0.0917,26310,1015,61979,25295,35670,3,22.12919760000659,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_1,3,ok,d1-c2,0.0917,26310,1015,61979,25295,35670,3,22.038214700005483,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_2,1,ok,d1-c2,0.0917,5538,466,27468,5072,21931,3,4.554559500014875,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_2,2,ok,d1-c2,0.0917,5538,466,27468,5072,21931,3,4.676905900007114,N/A,N/A
+B,early-a,early game,3,alpha_beta_order_2,3,ok,d1-c2,0.0917,5538,466,27468,5072,21931,3,4.6114826000411995,N/A,N/A
+A,early-b,early game,2,measured_minimax,1,ok,g0-f3,-0.0415,4008,62,4007,3946,0,2,3.5211031999788247,N/A,N/A
+A,early-b,early game,2,alpha_beta_order_1,1,ok,g0-f3,-0.0415,1708,62,4007,1646,2300,2,1.4946348000084981,N/A,N/A
+A,early-b,early game,2,alpha_beta_order_2,1,ok,g0-f3,-0.0415,570,62,4007,508,3438,2,0.48236299998825416,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_1,1,ok,g0-f3,0.077,27094,1028,69832,26066,42739,3,24.17975920002209,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_1,2,ok,g0-f3,0.077,27094,1028,69832,26066,42739,3,23.940666800015606,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_1,3,ok,g0-f3,0.077,27094,1028,69832,26066,42739,3,24.05533880001167,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_2,1,ok,g0-f3,0.077,7307,602,41006,6705,33700,3,6.510920300032012,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_2,2,ok,g0-f3,0.077,7307,602,41006,6705,33700,3,6.447422499943059,N/A,N/A
+B,early-b,early game,3,alpha_beta_order_2,3,ok,g0-f3,0.077,7307,602,41006,6705,33700,3,6.44835660001263,N/A,N/A
+A,middle-capture,middle game with immediate capture,2,measured_minimax,1,ok,e4-f5,1.0,3473,31,3472,3442,0,2,1.8200170999625698,N/A,N/A
+A,middle-capture,middle game with immediate capture,2,alpha_beta_order_1,1,ok,e4-f5,1.0,2558,31,3472,2527,915,2,1.3720986999687739,N/A,N/A
+A,middle-capture,middle game with immediate capture,2,alpha_beta_order_2,1,ok,e4-f5,1.0,941,31,3472,910,2532,2,0.5257821000413969,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_1,1,ok,e4-f5,1.0,19301,1282,55407,18019,36107,3,9.413594799989369,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_1,2,ok,e4-f5,1.0,19301,1282,55407,18019,36107,3,9.624069499957841,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_1,3,ok,e4-f5,1.0,19301,1282,55407,18019,36107,3,9.380533599993214,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_2,1,ok,e4-f5,1.0,4210,1045,45768,3165,41559,3,2.810416600026656,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_2,2,ok,e4-f5,1.0,4210,1045,45768,3165,41559,3,1.9801666000275873,N/A,N/A
+B,middle-capture,middle game with immediate capture,3,alpha_beta_order_2,3,ok,e4-f5,1.0,4210,1045,45768,3165,41559,3,1.8461717999889515,N/A,N/A
+A,middle-threat,middle game with immediate threat,2,measured_minimax,1,ok,e4-d3,1.0,6096,79,6095,6017,0,2,5.990926200000104,N/A,N/A
+A,middle-threat,middle game with immediate threat,2,alpha_beta_order_1,1,ok,e4-d3,1.0,423,79,6095,344,5673,2,0.3357030000188388,N/A,N/A
+A,middle-threat,middle game with immediate threat,2,alpha_beta_order_2,1,ok,e4-d3,1.0,423,79,6095,344,5673,2,0.330945800000336,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_1,1,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,0.9779141999897547,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_1,2,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,0.9803169000078924,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_1,3,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,1.013287300011143,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_2,1,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,0.9850544000510126,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_2,2,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,0.9758292000042275,N/A,N/A
+B,middle-threat,middle game with immediate threat,3,alpha_beta_order_2,3,ok,e4-d3,1.0,1316,279,19105,1037,17790,3,0.9673479999764822,N/A,N/A
+A,reduced,reduced material,2,measured_minimax,1,ok,a0-d3,0.0534,755,27,754,728,0,2,0.11266409995732829,N/A,N/A
+A,reduced,reduced material,2,alpha_beta_order_1,1,ok,a0-d3,0.0534,342,27,754,315,413,2,0.051886399975046515,N/A,N/A
+A,reduced,reduced material,2,alpha_beta_order_2,1,ok,a0-d3,0.0534,270,27,754,243,485,2,0.040129999979399145,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_1,1,ok,a0-d3,0.077,5961,443,14391,5518,8431,3,0.852744999981951,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_1,2,ok,a0-d3,0.077,5961,443,14391,5518,8431,3,0.8460932000307366,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_1,3,ok,a0-d3,0.077,5961,443,14391,5518,8431,3,0.8550699999905191,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_2,1,ok,a0-d3,0.077,2102,203,6831,1899,4730,3,0.3332819000352174,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_2,2,ok,a0-d3,0.077,2102,203,6831,1899,4730,3,0.33545949996914715,N/A,N/A
+B,reduced,reduced material,3,alpha_beta_order_2,3,ok,a0-d3,0.077,2102,203,6831,1899,4730,3,0.3298969999887049,N/A,N/A

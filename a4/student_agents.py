@@ -35,3 +35,5 @@ register_direct_llm_agent(
     "Direct LLM",
     choose_fallback,
 )
+
+import hw06_registration  # noqa: E402,F401
