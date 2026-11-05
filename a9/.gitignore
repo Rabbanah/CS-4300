@@ -1,0 +1,24 @@
+# Secrets and local environment configuration
+.env
+.env.*
+!model-service.env.example
+
+# Supplied source PDFs (must not be committed per assignment instructions)
+documents/*.pdf
+documents/
+
+# Persistent ChromaDB vector store and local databases
+chroma_db/
+*.sqlite3
+*.sqlite3-*
+*.db
+
+# Virtual environments and Python caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
