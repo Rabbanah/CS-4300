@@ -1,0 +1,41 @@
+{
+  "case_id": "case_04_unsupported_config",
+  "agent_name": "smc",
+  "status": "INVALID_CONFIG",
+  "success": false,
+  "shots_taken": 0,
+  "shot_budget": 16,
+  "total_ship_cells": 17,
+  "hits": 0,
+  "misses": 0,
+  "sunk_ships": [],
+  "hit_rate": 0.0,
+  "mean_step_latency_ms": 0.0,
+  "max_step_latency_ms": 0.0,
+  "mean_entropy_reduction_bits": 0.0,
+  "rejuvenation_events": 0,
+  "repair_events": 0,
+  "exact_fallback_step": null,
+  "error_message": "Ship 'Carrier' (length 5) cannot fit on a 4x4 grid.",
+  "config_summary": {
+    "rows": 4,
+    "cols": 4,
+    "fleet_spec": {
+      "Carrier": 5,
+      "Battleship": 4,
+      "Cruiser": 3,
+      "Submarine": 3,
+      "Destroyer": 2
+    },
+    "shot_budget": 16,
+    "env_seed": 4300,
+    "agent_type": "smc",
+    "agent_seed": 4300,
+    "num_particles": 250,
+    "has_fixed_ships": false
+  },
+  "final_env_state": {
+    "status": "INVALID_CONFIG"
+  },
+  "steps": []
+}

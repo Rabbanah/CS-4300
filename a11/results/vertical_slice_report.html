@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vertical Slice Report: Bayesian Belief-Tracking Battleship Agent — Hyrum Lutz</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.55in 0.6in 0.55in 0.6in;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #1f2937;
+      font-size: 9.8pt;
+      line-height: 1.48;
+      margin: 0;
+    }
+    header.title-block {
+      border-bottom: 2.5px solid #1d4ed8;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 18pt;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 10.5pt;
+      color: #475569;
+      margin: 0 0 10px 0;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 18px;
+      font-size: 9.2pt;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+    .meta-grid div strong { color: #0f172a; }
+    h2 {
+      font-size: 12.5pt;
+      color: #1e3a8a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin: 16px 0 8px 0;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 10.4pt;
+      color: #0f172a;
+      margin: 11px 0 5px 0;
+      page-break-after: avoid;
+    }
+    p { margin: 0 0 7px 0; }
+    ul, ol { margin: 0 0 8px 0; padding-left: 20px; }
+    li { margin-bottom: 3.5px; }
+    code {
+      font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+      font-size: 8.6pt;
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #0f172a;
+    }
+    pre {
+      font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+      font-size: 7.2pt;
+      line-height: 1.36;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #2563eb;
+      border-radius: 4px;
+      padding: 7px 9px;
+      margin: 5px 0 9px 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 10px 0;
+      font-size: 8.4pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #fafcff; }
+    .muted { color: #64748b; font-size: 7.7pt; }
+    .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .badge-ok { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .badge-warn { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .badge-err { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    .callout {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid #1d4ed8;
+      border-radius: 4px;
+      padding: 8px 11px;
+      margin: 8px 0 10px 0;
+      break-inside: avoid;
+    }
+    .diagram-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 8px 0 10px 0;
+      text-align: center;
+      break-inside: avoid;
+    }
+    .avoid-break { break-inside: avoid; }
+    a { color: #1d4ed8; text-decoration: none; }
+    footer {
+      margin-top: 14px;
+      padding-top: 8px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 8.3pt;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <header class="title-block">
+    <h1>Vertical Slice Checkpoint: Bayesian Belief-Tracking Battleship Agent</h1>
+    <p class="subtitle">U0-HW-11 Complete Agent-Environment Path, Automated Tests, and Baseline Measurements</p>
+    <div class="meta-grid">
+      <div><strong>Student:</strong> Hyrum Lutz</div>
+      <div><strong>Course:</strong> CS-4300 Artificial Intelligence</div>
+      <div><strong>Repository URL:</strong> <a href="https://github.com/Rabbanah/CS-4300">https://github.com/Rabbanah/CS-4300</a></div>
+      <div><strong>Submitted Commit:</strong> <code>pending final commit (base U0-HW-10: 3fcd68e)</code></div>
+      <div><strong>Implementation Directory:</strong> <code>a11/</code> (builds on U0-HW-10 in <code>a10/</code>)</div>
+      <div><strong>Runtime Stack:</strong> Python 3.14.8 (Standard Library only; no secrets or <code>.env</code>)</div>
+    </div>
+  </header>
+
+  <section>
+    <h2>1. Setup, Test, Run, and Baseline-Measurement Commands</h2>
+    <p>All code uses the Python 3.10+ standard library with deterministic explicit random seeds (no external services, network calls, or credentials). Execute all commands from the repository root (<code>CS-4300</code>):</p>
+    <pre># 1. Verify environment (no pip installs or .env setup required)
+python --version
+
+# 2. Run automated deterministic unit &amp; integration tests (18 tests, ~2.3 s)
+python -m unittest discover -s a11 -p "test_*.py" -v
+
+# 3. Run one complete 10x10 vertical-slice episode with step-by-step inspection
+python a11/runner.py --seed 4300 --budget 75 --particles 250 --show-board
+
+# 4. Run all 5 retained baseline cases (+ 2 Hunt-and-Target reference comparisons)
+#    Writes raw CSV, JSON summaries, and full JSON traces under a11/results/
+python a11/baseline_cases.py</pre>
+  </section>
+
+  <section>
+    <h2>2. Implemented Agent-Environment Path and Changes from U0-HW-10</h2>
+    <p>The vertical slice converts the 6&times;6 exhaustive Proof of Concept (<code>a10/poc_battleship.py</code>) into a full 10&times;10 five-ship system in <code>a11/</code> with strict separation between the hidden-state simulator (<code>battleship_env.py</code>), the Sequential Bayesian Belief-Tracking agent (<code>belief_agent.py</code>), and the application-controlled execution &amp; telemetry loop (<code>runner.py</code>).</p>
+
+    <div class="diagram-box">
+      <svg viewBox="0 0 700 185" width="100%" role="img" aria-label="Architecture diagram of the Battleship vertical slice agent-environment loop">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e3a8a"/>
+          </marker>
+        </defs>
+        <!-- Config Box -->
+        <rect x="8" y="20" width="115" height="62" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="65" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">EnvConfig</text>
+        <text x="65" y="57" text-anchor="middle" font-size="8.5" fill="#334155">validate_config()</text>
+        <text x="65" y="71" text-anchor="middle" font-size="8" fill="#991b1b">INVALID_CONFIG</text>
+
+        <!-- Env Box -->
+        <rect x="155" y="14" width="175" height="74" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
+        <text x="242" y="34" text-anchor="middle" font-size="10.5" font-weight="700" fill="#14532d">BattleshipEnv (10x10)</text>
+        <text x="242" y="49" text-anchor="middle" font-size="8.5" fill="#166534">Hidden 5-ship fleet (17 cells)</text>
+        <text x="242" y="62" text-anchor="middle" font-size="8.5" fill="#166534">Bounds, duplicates, budget B_max</text>
+        <text x="242" y="76" text-anchor="middle" font-size="8" fill="#166534">VICTORY / TIMEOUT / INVALID_ACTION</text>
+
+        <!-- Runner Box -->
+        <rect x="362" y="14" width="150" height="74" rx="6" fill="#fefce8" stroke="#a16207" stroke-width="1.5"/>
+        <text x="437" y="34" text-anchor="middle" font-size="10.5" font-weight="700" fill="#713f12">runner.py Loop</text>
+        <text x="437" y="49" text-anchor="middle" font-size="8.5" fill="#854d0e">Per-step StepTrace log</text>
+        <text x="437" y="62" text-anchor="middle" font-size="8.5" fill="#854d0e">Latency &amp; entropy metrics</text>
+        <text x="437" y="76" text-anchor="middle" font-size="8" fill="#854d0e">Explicit EpisodeStatus</text>
+
+        <!-- Trace Artifact Box -->
+        <rect x="544" y="20" width="148" height="62" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+        <text x="618" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">EpisodeResult</text>
+        <text x="618" y="57" text-anchor="middle" font-size="8.5" fill="#334155">CSV/JSON summaries</text>
+        <text x="618" y="71" text-anchor="middle" font-size="8" fill="#334155">Full step traces (results/)</text>
+
+        <!-- Agent Box -->
+        <rect x="155" y="116" width="357" height="60" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="333" y="134" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1e3a8a">ParticleFilterAgent (SMC + MCMC + Exact Endgame Fallback)</text>
+        <text x="333" y="149" text-anchor="middle" font-size="8.5" fill="#1e40af">[1] Bitmask Likelihood Filter  ->  [2] Exact Check OR MRV Repair + Gibbs/2-Ship MCMC</text>
+        <text x="333" y="163" text-anchor="middle" font-size="8.5" fill="#1e40af">[3] Policy: arg max P(occ_r,c) + top-5 candidates  |  Raises BELIEF_COLLAPSE if 0 fleets</text>
+
+        <!-- Arrows -->
+        <line x1="123" y1="51" x2="152" y2="51" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <line x1="330" y1="51" x2="359" y2="51" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <line x1="512" y1="51" x2="541" y2="51" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <!-- Bidirectional Env <-> Agent via Runner -->
+        <line x1="220" y1="116" x2="220" y2="91" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <text x="212" y="106" text-anchor="end" font-size="8.2" font-weight="600" fill="#1e3a8a">probe(r, c)</text>
+        <line x1="285" y1="88" x2="285" y2="113" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <text x="293" y="106" text-anchor="start" font-size="8.2" font-weight="600" fill="#15803d">ShotResult(coord, hit, sunk_ship)</text>
+      </svg>
+    </div>
+
+    <h3>Alignment and Material Refinements from U0-HW-10</h3>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" style="width:24%;">Design Component</th>
+          <th scope="col" style="width:28%;">U0-HW-10 Specification</th>
+          <th scope="col" style="width:48%;">Implemented Vertical Slice &amp; Justification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Exact Likelihood Conditioning</strong></td>
+          <td>Filter hypotheses by hits, misses, and sunk ship identities.</td>
+          <td>Implemented via 100-bit integer bitmasks conditioning on both <code>sunk_ship</code> and the exact sinking coordinate + cumulative hits mask at the sink step. Guarantees exact Bayesian equivalence to full percept history while cutting per-check cost to O(1) bitwise ops.</td>
+        </tr>
+        <tr>
+          <td><strong>Particle Deprivation Recovery</strong></td>
+          <td>SMC particle set with local MCMC ship-perturbation rejuvenation (flagged as principal uncertainty).</td>
+          <td>Added <strong>randomized MRV hit-covering backtracking repair</strong> when <code>survived_particles == 0</code>, paired with <strong>exact single-ship Gibbs sweeps</strong> (100% acceptance, preserves uniform posterior) and <strong>coupled two-ship block moves</strong> to break adjacent-ship lock-in. Exhaustive tree pruning also proves unsatisfiability on corrupted observations.</td>
+        </tr>
+        <tr>
+          <td><strong>Exact Endgame Fallback</strong></td>
+          <td>Switch to exact enumeration when remaining hypotheses drop below a threshold.</td>
+          <td>Triggered automatically when remaining per-ship domain product is tractable (&le; 60,000, or &le; 120,000 with &le; 2 unsunk ships) and total consistent fleets &le; 4,000. Reproduces the exact 2,472 hypotheses on the 6&times;6 PoC and activates seamlessly mid-game on 10&times;10 (Step 28 in Case 01).</td>
+        </tr>
+        <tr>
+          <td><strong>Failure &amp; Trace Boundaries</strong></td>
+          <td>Victory within <code>B_max</code>; timeout or invalid action failure.</td>
+          <td>Added explicit <code>EpisodeStatus</code> enum (<code>VICTORY</code>, <code>TIMEOUT</code>, <code>BELIEF_COLLAPSE</code>, <code>INVALID_CONFIG</code>, <code>INVALID_ACTION</code>) and per-step JSON trace recording (available actions, top-5 candidates, particle survival, board entropy reduction, latency).</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Initial Baseline Measurements and Execution Evidence</h2>
+    <p>Five retained cases were executed via <code>python a11/baseline_cases.py</code> (with <code>N=250</code> particles, 3 MCMC sweeps, <code>agent_seed=4300</code>). Numerical measures track sample efficiency (shots taken &amp; hit rate), reliability (budget completion &amp; explicit failure handling), information efficiency (mean board Shannon entropy reduction in bits/probe), and computational cost (mean &amp; peak step latency in ms).</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Retained Case &amp; Category</th>
+          <th scope="col">Terminal Status</th>
+          <th scope="col">Success Met?</th>
+          <th scope="col">Shots / Budget</th>
+          <th scope="col">Hits (Rate)</th>
+          <th scope="col">Mean / Max Latency (ms)</th>
+          <th scope="col">Mean &Delta;H (bits/shot)</th>
+          <th scope="col">Rejuv / Repair / Exact Step</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td><code>case_01_standard_seed4300</code><br><span class="muted">Representative Supported</span></td>
+              <td><span class="badge badge-ok">VICTORY</span></td>
+              <td>Yes</td>
+              <td>52/75</td>
+              <td>17/17 (32.7%)</td>
+              <td>11.43 / 49.41</td>
+              <td>1.243</td>
+              <td>27 / 0 / 28</td>
+            </tr>
+            <tr>
+              <td><code>case_02_corner_clustered_boundary</code><br><span class="muted">Adversarial Boundary</span></td>
+              <td><span class="badge badge-ok">VICTORY</span></td>
+              <td>Yes</td>
+              <td>56/75</td>
+              <td>17/17 (30.4%)</td>
+              <td>6.91 / 30.79</td>
+              <td>1.154</td>
+              <td>33 / 0 / 35</td>
+            </tr>
+            <tr>
+              <td><code>case_03_tight_budget_timeout</code><br><span class="muted">Unsuccessful (Timeout)</span></td>
+              <td><span class="badge badge-warn">TIMEOUT</span></td>
+              <td>No</td>
+              <td>30/30</td>
+              <td>12/17 (40.0%)</td>
+              <td>12.73 / 33.95</td>
+              <td>1.323</td>
+              <td>27 / 0 / 29</td>
+            </tr>
+            <tr>
+              <td><code>case_04_unsupported_config</code><br><span class="muted">Unsupported Input</span></td>
+              <td><span class="badge badge-err">INVALID_CONFIG</span></td>
+              <td>No</td>
+              <td>0/16</td>
+              <td>0/17 (0.0%)</td>
+              <td>0.00 / 0.00</td>
+              <td>0.000</td>
+              <td>0 / 0 / —</td>
+            </tr>
+            <tr>
+              <td><code>case_05_corrupted_sensor_collapse</code><br><span class="muted">Expected Failure (Collapse)</span></td>
+              <td><span class="badge badge-err">BELIEF_COLLAPSE</span></td>
+              <td>No</td>
+              <td>1/36</td>
+              <td>0/5 (0.0%)</td>
+              <td>0.02 / 0.02</td>
+              <td>0.000</td>
+              <td>0 / 0 / 0</td>
+            </tr>
+      </tbody>
+    </table>
+
+    <div class="avoid-break">
+      <h3>Paired Reference Baseline Check (<code>HuntAndTargetAgent</code> on Identical 10&times;10 Boards)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Reference Run</th>
+            <th scope="col">Agent</th>
+            <th scope="col">Status</th>
+            <th scope="col">Success</th>
+            <th scope="col">Shots / Budget</th>
+            <th scope="col">Hit Rate</th>
+            <th scope="col">Mean Latency</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td><code>ref_01_hunt_target_seed4300</code></td>
+              <td><code>hunt_target</code></td>
+              <td><span class="badge badge-ok">VICTORY</span></td>
+              <td>Yes</td>
+              <td>72/75</td>
+              <td>23.6%</td>
+              <td>0.001 ms</td>
+            </tr>
+            <tr>
+              <td><code>ref_02_hunt_target_corner_clustered</code></td>
+              <td><code>hunt_target</code></td>
+              <td><span class="badge badge-ok">VICTORY</span></td>
+              <td>Yes</td>
+              <td>54/75</td>
+              <td>31.5%</td>
+              <td>0.001 ms</td>
+            </tr>
+        </tbody>
+      </table>
+      <p><strong>Key Empirical Contrast:</strong> On the representative 10&times;10 layout (<code>case_01</code>), <code>smc_max_prob</code> sank all 5 ships in <strong>52 shots</strong> vs. <strong>72 shots</strong> for <code>hunt_target</code> (a <strong>20-shot / 27.8% reduction</strong>) with mean latency <strong>11.43 ms</strong> and zero particle repairs. However, on the adversarial corner-clustered board (<code>case_02</code>), <code>smc_max_prob</code> required <strong>56 shots</strong> vs. <strong>54 shots</strong> for <code>hunt_target</code> (+2 shots), and peak single-step latency on <code>case_01</code> hit <strong>49.41 ms</strong> (within 0.6 ms of the 50 ms U0-HW-10 limit).</p>
+    </div>
+
+    <h3>Selected Execution Evidence (Extracted Directly from Preserved JSON Traces)</h3>
+    <p><strong>Case 01 (<code>a11/results/traces/case_01_standard_seed4300.json</code>):</strong> Step 01 had 100 available actions with top-5 SMC candidates <code>(6,3):0.276, (5,3):0.256, (4,3):0.248, (6,4):0.248, (6,7):0.236</code>. The excerpt below shows MCMC hunting &amp; sinking Submarine (Steps 04–06), deductive Carrier completion at <code>P=1.000</code> (Step 22), seamless transition to <code>EXACT_FALLBACK</code> with 3,750 exact fleets (Step 28), and exact endgame deduction of Destroyer (Steps 50–52):</p>
+    <pre>S01 (6,3) | P=0.276 H=0.85 | MISS                  |  181-&gt; 250 ( 250u) | Hb=64.34 | 13.08ms [MCMC]
+S04 (4,2) | P=0.248 H=0.81 | HIT                   |   62-&gt; 250 ( 250u) | Hb=60.26 | 49.41ms [MCMC]
+S05 (3,2) | P=0.440 H=0.99 | HIT                   |   92-&gt; 250 ( 250u) | Hb=56.98 | 45.26ms [MCMC]
+S06 (5,2) | P=0.592 H=0.98 | HIT (SUNK Submarine)  |   11-&gt; 250 ( 250u) | Hb=55.89 | 34.26ms [MCMC]
+S16 (2,6) | P=0.720 H=0.86 | HIT (SUNK Battleship) |   19-&gt; 250 ( 250u) | Hb=41.82 | 20.36ms [MCMC]
+S21 (7,8) | P=0.840 H=0.63 | MISS                  |   40-&gt; 250 ( 236u) | Hb=25.91 | 41.84ms [MCMC]
+S22 (2,8) | P=1.000 H=0.00 | HIT (SUNK Carrier)    |  220-&gt; 250 ( 243u) | Hb=26.09 |  6.76ms [MCMC]
+S28 (9,7) | P=0.132 H=0.56 | MISS                  |  217-&gt;3750 (3750u) | Hb=25.28 |  6.80ms [EXACT]
+S37 (7,0) | P=0.193 H=0.71 | HIT                   |  211-&gt; 211 ( 211u) | Hb=17.04 |  1.12ms [EXACT]
+S40 (7,2) | P=0.981 H=0.14 | HIT (SUNK Cruiser)    |   51-&gt;  51 (  51u) | Hb=12.15 |  0.17ms [EXACT]
+S50 (1,0) | P=0.080 H=0.40 | HIT                   |    2-&gt;   2 (   2u) | Hb= 2.00 |  0.10ms [EXACT]
+S51 (0,0) | P=0.500 H=1.00 | MISS                  |    1-&gt;   1 (   1u) | Hb= 0.00 |  0.07ms [EXACT]
+S52 (1,1) | P=1.000 H=0.00 | HIT (SUNK Destroyer)  |    1-&gt;   1 (   1u) | Hb= 0.00 |  0.04ms [EXACT]</pre>
+
+    <div class="avoid-break">
+      <p><strong>Case 02 Adversarial Boundary (<code>case_02_corner_clustered_boundary.json</code>):</strong> Because all five ships sit along rows 0/9 and columns 0/9, marginal probability center bias caused <strong>14 consecutive misses</strong> (11 in the interior 8&times;8 region) before the first ship hit at Step 15, demonstrating why corner-clustered boards degrade <code>max_prob</code>:</p>
+      <pre>S01 (6,3) | P=0.276 H=0.85 | MISS                  |  181-&gt; 250 ( 250u) | Hb=64.34 | 14.33ms [MCMC]
+S02 (3,7) | P=0.272 H=0.84 | MISS                  |  182-&gt; 250 ( 250u) | Hb=64.30 | 11.98ms [MCMC]
+S03 (5,4) | P=0.276 H=0.85 | MISS                  |  181-&gt; 250 ( 250u) | Hb=64.05 | 12.14ms [MCMC]
+S14 (5,9) | P=0.372 H=0.95 | MISS                  |  157-&gt; 250 ( 250u) | Hb=58.19 | 10.79ms [MCMC]
+S15 (0,3) | P=0.376 H=0.96 | HIT                   |   94-&gt; 250 ( 250u) | Hb=54.06 | 30.79ms [MCMC]
+S35 (3,9) | P=0.892 H=0.49 | MISS                  |   27-&gt; 363 ( 363u) | Hb=24.38 |  0.94ms [EXACT]
+S56 (9,1) | P=0.500 H=1.00 | HIT (SUNK Destroyer)  |    1-&gt;   1 (   1u) | Hb= 0.00 |  0.04ms [EXACT]</pre>
+    </div>
+
+    <div class="avoid-break">
+      <p><strong>Explicit Failure, Boundary, and Unsupported-Input Evidence (Cases 03, 04, 05):</strong></p>
+      <pre># Case 03 (TIMEOUT at tight budget B_max=30; 12/17 ship cells hit, 2 ships sunk before budget expired):
+S30 (8,7) | P=0.148 H=0.61 | MISS                  | 3219-&gt;3219 (3219u) | Hb=24.94 |  6.33ms [EXACT]
+-> Terminal Status: TIMEOUT | success=False | budget_remaining=0 | remaining_ship_cells=5
+
+# Case 04 (INVALID_CONFIG caught prior to episode loop; 0 shots executed):
+-> Terminal Status: INVALID_CONFIG | success=False | error="Ship &#x27;Carrier&#x27; (length 5) cannot fit on a 4x4 grid."
+
+# Case 05 (BELIEF_COLLAPSE on injected impossible percept: length-3 Cruiser sunk on 1st hit):
+S01 (2,2) | P=0.184 | HIT (SUNK Cruiser) | BELIEF_COLLAPSE: Belief state collapsed after ShotResult(coord=(2, 2), hit=True, sunk_ship=&#x27;Cruiser&#x27;): at least one ship has zero consistent placements.
+-> Terminal Status: BELIEF_COLLAPSE | success=False | remaining_particles=0</pre>
+    </div>
+  </section>
+
+  <section class="avoid-break">
+    <h2>4. Current Omissions and Known Failures</h2>
+    <ul>
+      <li><strong>Deferred Expected Information Gain Policy (<code>smc_info_gain</code>):</strong> Only the <code>arg max P(occ_r,c)</code> policy is implemented in this vertical slice; one-step expected Shannon entropy reduction is scheduled for the next checkpoint (per U0-HW-10 Week 3).</li>
+      <li><strong>Deferred Multi-Seed Statistical Evaluation:</strong> The 1,000-episode paired benchmark across <code>B_max &isin; &#123;60, 75, 100&#125;</code> with 95% bootstrap confidence intervals and the optional no-touching rule variant are deferred to the November 19 evaluation checkpoint.</li>
+      <li><strong>Known Weakness — Corner/Edge Bias on Adversarial Layouts:</strong> On <code>case_02_corner_clustered_boundary</code>, <code>smc_max_prob</code> took 14 consecutive misses (11 in the interior 8&times;8 region) before its first hit and trailed <code>hunt_target</code> by 2 shots (56 vs. 54).</li>
+      <li><strong>Known Weakness — Latency Spikes Under Heavy Pruning:</strong> Unconditional 3-sweep MCMC rejuvenation on every step where <code>survived &lt; 250</code> produced a peak step latency of 49.41 ms on <code>case_01</code>, leaving minimal margin below the 50 ms U0-HW-10 target.</li>
+      <li><strong>Explicitly Handled Failure Boundaries:</strong> The agent assumes a known fleet manifest and noise-free deterministic percepts; budget exhaustion (<code>TIMEOUT</code>), invalid grid/fleet specs (<code>INVALID_CONFIG</code>), invalid probes (<code>INVALID_ACTION</code>), and contradictory percepts (<code>BELIEF_COLLAPSE</code>) terminate explicitly with diagnostic records rather than silent recovery.</li>
+    </ul>
+  </section>
+
+  <section class="avoid-break">
+    <h2>5. Evidence-Based Change Planned for Next Checkpoint (Nov 19)</h2>
+    <div class="callout">
+      <p><strong>Planned Change:</strong> Implement <strong>Expected Information Gain (<code>smc_info_gain</code>) top-<em>K</em> one-step entropy lookahead</strong> paired with <strong>ESS-gated MCMC rejuvenation and cell-indexed placement tables</strong>.</p>
+      <p><strong>Empirical Support from Baseline Results:</strong></p>
+      <ol>
+        <li><em>Addressing Corner-Clustered Degradation (Case 02):</em> <code>smc_max_prob</code> lost 2 shots to <code>hunt_target</code> (56 vs. 54) and achieved lower entropy reduction (1.154 vs. 1.243 bits/shot) due to interior center bias. Evaluating expected posterior entropy reduction across the top-<em>K</em> candidate cells rewards probes that maximally partition both interior and perimeter fleet hypotheses.</li>
+        <li><em>Creating Latency Headroom for Lookahead (Case 01):</em> Peak single-step latency reached 49.41 ms during unconditional rejuvenation (27 events in Case 01, 33 in Case 02). Triggering MCMC rejuvenation only when effective survival drops below <code>0.6N</code> (or unique diversity falls below <code>0.7N</code>) and pre-indexing ship placements by cell bit will reduce peak SMC update latency below ~20 ms, ensuring <code>smc_info_gain</code> stays safely under the 50 ms/shot deployment criterion across the 1,000-episode evaluation.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <strong>AI-Assistance Disclosure:</strong> Antigravity / Gemini assisted in modularizing the vertical slice (<code>a11/battleship_env.py</code>, <code>a11/belief_agent.py</code>, <code>a11/runner.py</code>, <code>a11/baseline_cases.py</code>), writing the 18-test <code>unittest</code> suite, and formatting this accessible PDF report. All 18 tests and all 5 retained baseline cases were executed locally on Python 3.14.8, and every reported number and trace excerpt was verified directly against the raw JSON/CSV artifacts in <code>a11/results/</code>.
+  </footer>
+</body>
+</html>

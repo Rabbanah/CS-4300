@@ -1,0 +1,3763 @@
+{
+  "case_id": "ref_02_hunt_target_corner_clustered",
+  "agent_name": "hunt_target",
+  "status": "VICTORY",
+  "success": true,
+  "shots_taken": 54,
+  "shot_budget": 75,
+  "total_ship_cells": 17,
+  "hits": 17,
+  "misses": 37,
+  "sunk_ships": [
+    "Battleship",
+    "Carrier",
+    "Cruiser",
+    "Submarine",
+    "Destroyer"
+  ],
+  "hit_rate": 0.3148,
+  "mean_step_latency_ms": 0.001,
+  "max_step_latency_ms": 0.002,
+  "mean_entropy_reduction_bits": 0.0,
+  "rejuvenation_events": 0,
+  "repair_events": 0,
+  "exact_fallback_step": null,
+  "error_message": null,
+  "config_summary": {
+    "rows": 10,
+    "cols": 10,
+    "fleet_spec": {
+      "Carrier": 5,
+      "Battleship": 4,
+      "Cruiser": 3,
+      "Submarine": 3,
+      "Destroyer": 2
+    },
+    "shot_budget": 75,
+    "env_seed": 4300,
+    "agent_type": "hunt_target",
+    "agent_seed": 4300,
+    "num_particles": null,
+    "has_fixed_ships": true
+  },
+  "final_env_state": {
+    "rows": 10,
+    "cols": 10,
+    "shots_taken": 54,
+    "shot_budget": 75,
+    "budget_remaining": 21,
+    "total_hits": 17,
+    "total_misses": 37,
+    "sunk_ships": [
+      "Battleship",
+      "Carrier",
+      "Cruiser",
+      "Submarine",
+      "Destroyer"
+    ],
+    "remaining_ship_cells": 0,
+    "status": "VICTORY",
+    "ground_truth_ships": {
+      "Carrier": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "Battleship": [
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "Cruiser": [
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "Submarine": [
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ]
+      ],
+      "Destroyer": [
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "available_actions_count": 100,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 0,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          9,
+          9
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.002
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 1,
+        "shot_budget": 75,
+        "budget_remaining": 74,
+        "total_hits": 1,
+        "total_misses": 0,
+        "sunk_ships": [],
+        "remaining_ship_cells": 16,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 2,
+      "available_actions_count": 99,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 1,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          9
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 2,
+        "shot_budget": 75,
+        "budget_remaining": 73,
+        "total_hits": 1,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 16,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 3,
+      "available_actions_count": 98,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 1,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 3,
+        "shot_budget": 75,
+        "budget_remaining": 72,
+        "total_hits": 2,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 15,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 4,
+      "available_actions_count": 97,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 2,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 4,
+        "shot_budget": 75,
+        "budget_remaining": 71,
+        "total_hits": 2,
+        "total_misses": 2,
+        "sunk_ships": [],
+        "remaining_ship_cells": 15,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 5,
+      "available_actions_count": 96,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 2,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            7
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        7
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          7
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 5,
+        "shot_budget": 75,
+        "budget_remaining": 70,
+        "total_hits": 3,
+        "total_misses": 2,
+        "sunk_ships": [],
+        "remaining_ship_cells": 14,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 6,
+      "available_actions_count": 95,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 3,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        7
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          7
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 6,
+        "shot_budget": 75,
+        "budget_remaining": 69,
+        "total_hits": 3,
+        "total_misses": 3,
+        "sunk_ships": [],
+        "remaining_ship_cells": 14,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 7,
+      "available_actions_count": 94,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 3,
+        "sunk_ships": []
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            6
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        6
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          6
+        ],
+        "hit": true,
+        "sunk_ship": "Battleship"
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 7,
+        "shot_budget": 75,
+        "budget_remaining": 68,
+        "total_hits": 4,
+        "total_misses": 3,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 8,
+      "available_actions_count": 93,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 4,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            6
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        6
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          6
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 8,
+        "shot_budget": 75,
+        "budget_remaining": 67,
+        "total_hits": 4,
+        "total_misses": 4,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 9,
+      "available_actions_count": 92,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 4,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            5
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        5
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 9,
+        "shot_budget": 75,
+        "budget_remaining": 66,
+        "total_hits": 4,
+        "total_misses": 5,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 10,
+      "available_actions_count": 91,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 4,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            6
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        4,
+        6
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          4,
+          6
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 10,
+        "shot_budget": 75,
+        "budget_remaining": 65,
+        "total_hits": 4,
+        "total_misses": 6,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 11,
+      "available_actions_count": 90,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 4,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        4,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          4,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 11,
+        "shot_budget": 75,
+        "budget_remaining": 64,
+        "total_hits": 4,
+        "total_misses": 7,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 12,
+      "available_actions_count": 89,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 4,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          0,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 12,
+        "shot_budget": 75,
+        "budget_remaining": 63,
+        "total_hits": 5,
+        "total_misses": 7,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 12,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 13,
+      "available_actions_count": 88,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 5,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          0
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 13,
+        "shot_budget": 75,
+        "budget_remaining": 62,
+        "total_hits": 5,
+        "total_misses": 8,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 12,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 14,
+      "available_actions_count": 87,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 5,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          1
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 14,
+        "shot_budget": 75,
+        "budget_remaining": 61,
+        "total_hits": 6,
+        "total_misses": 8,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 11,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 15,
+      "available_actions_count": 86,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 6,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 15,
+        "shot_budget": 75,
+        "budget_remaining": 60,
+        "total_hits": 6,
+        "total_misses": 9,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 11,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 16,
+      "available_actions_count": 85,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 6,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 16,
+        "shot_budget": 75,
+        "budget_remaining": 59,
+        "total_hits": 7,
+        "total_misses": 9,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 10,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 17,
+      "available_actions_count": 84,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 7,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 17,
+        "shot_budget": 75,
+        "budget_remaining": 58,
+        "total_hits": 7,
+        "total_misses": 10,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 10,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 18,
+      "available_actions_count": 83,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 7,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        3
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          3
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 18,
+        "shot_budget": 75,
+        "budget_remaining": 57,
+        "total_hits": 8,
+        "total_misses": 10,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 9,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 19,
+      "available_actions_count": 82,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 8,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        3
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 19,
+        "shot_budget": 75,
+        "budget_remaining": 56,
+        "total_hits": 8,
+        "total_misses": 11,
+        "sunk_ships": [
+          "Battleship"
+        ],
+        "remaining_ship_cells": 9,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 20,
+      "available_actions_count": 81,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 8,
+        "sunk_ships": [
+          "Battleship"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            4
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        4
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          4
+        ],
+        "hit": true,
+        "sunk_ship": "Carrier"
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 20,
+        "shot_budget": 75,
+        "budget_remaining": 55,
+        "total_hits": 9,
+        "total_misses": 11,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 21,
+      "available_actions_count": 80,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            4
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        4
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          4
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 21,
+        "shot_budget": 75,
+        "budget_remaining": 54,
+        "total_hits": 9,
+        "total_misses": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 22,
+      "available_actions_count": 79,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            5
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        5
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 22,
+        "shot_budget": 75,
+        "budget_remaining": 53,
+        "total_hits": 9,
+        "total_misses": 13,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 23,
+      "available_actions_count": 78,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        4,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          4,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 23,
+        "shot_budget": 75,
+        "budget_remaining": 52,
+        "total_hits": 9,
+        "total_misses": 14,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 24,
+      "available_actions_count": 77,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            4
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        4
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          4
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 24,
+        "shot_budget": 75,
+        "budget_remaining": 51,
+        "total_hits": 9,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 25,
+      "available_actions_count": 76,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          1,
+          9
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 25,
+        "shot_budget": 75,
+        "budget_remaining": 50,
+        "total_hits": 10,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 7,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 26,
+      "available_actions_count": 75,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 2,
+        "hits_count": 10,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          9
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 26,
+        "shot_budget": 75,
+        "budget_remaining": 49,
+        "total_hits": 11,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ship_cells": 6,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 27,
+      "available_actions_count": 74,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 2,
+        "hits_count": 11,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        2,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          2,
+          9
+        ],
+        "hit": true,
+        "sunk_ship": "Cruiser"
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 27,
+        "shot_budget": 75,
+        "budget_remaining": 48,
+        "total_hits": 12,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 28,
+      "available_actions_count": 73,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 3,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          1,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 28,
+        "shot_budget": 75,
+        "budget_remaining": 47,
+        "total_hits": 12,
+        "total_misses": 16,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 29,
+      "available_actions_count": 72,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 2,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          0,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 29,
+        "shot_budget": 75,
+        "budget_remaining": 46,
+        "total_hits": 12,
+        "total_misses": 17,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 30,
+      "available_actions_count": 71,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        3,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          3,
+          9
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 30,
+        "shot_budget": 75,
+        "budget_remaining": 45,
+        "total_hits": 12,
+        "total_misses": 18,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 31,
+      "available_actions_count": 70,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        2,
+        8
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          2,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 31,
+        "shot_budget": 75,
+        "budget_remaining": 44,
+        "total_hits": 12,
+        "total_misses": 19,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 32,
+      "available_actions_count": 69,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        6,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          6,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 32,
+        "shot_budget": 75,
+        "budget_remaining": 43,
+        "total_hits": 12,
+        "total_misses": 20,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 33,
+      "available_actions_count": 68,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            5
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        5,
+        5
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          5,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 33,
+        "shot_budget": 75,
+        "budget_remaining": 42,
+        "total_hits": 12,
+        "total_misses": 21,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 34,
+      "available_actions_count": 67,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            7
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        5,
+        7
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          5,
+          7
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 34,
+        "shot_budget": 75,
+        "budget_remaining": 41,
+        "total_hits": 12,
+        "total_misses": 22,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 35,
+      "available_actions_count": 66,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            6
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        2,
+        6
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          2,
+          6
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 35,
+        "shot_budget": 75,
+        "budget_remaining": 40,
+        "total_hits": 12,
+        "total_misses": 23,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 36,
+      "available_actions_count": 65,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            7
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        7
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          1,
+          7
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 36,
+        "shot_budget": 75,
+        "budget_remaining": 39,
+        "total_hits": 12,
+        "total_misses": 24,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 37,
+      "available_actions_count": 64,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        7,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          7,
+          9
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 37,
+        "shot_budget": 75,
+        "budget_remaining": 38,
+        "total_hits": 12,
+        "total_misses": 25,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 38,
+      "available_actions_count": 63,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            4
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        2,
+        4
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          2,
+          4
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 38,
+        "shot_budget": 75,
+        "budget_remaining": 37,
+        "total_hits": 12,
+        "total_misses": 26,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 39,
+      "available_actions_count": 62,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            9
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        5,
+        9
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          5,
+          9
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 39,
+        "shot_budget": 75,
+        "budget_remaining": 36,
+        "total_hits": 12,
+        "total_misses": 27,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 40,
+      "available_actions_count": 61,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            3
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        7,
+        3
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          7,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 40,
+        "shot_budget": 75,
+        "budget_remaining": 35,
+        "total_hits": 12,
+        "total_misses": 28,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 41,
+      "available_actions_count": 60,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            6
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        6,
+        6
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          6,
+          6
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 41,
+        "shot_budget": 75,
+        "budget_remaining": 34,
+        "total_hits": 12,
+        "total_misses": 29,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 42,
+      "available_actions_count": 59,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            3
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        3
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          9,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 42,
+        "shot_budget": 75,
+        "budget_remaining": 33,
+        "total_hits": 12,
+        "total_misses": 30,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 43,
+      "available_actions_count": 58,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            5
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        3,
+        5
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          3,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 43,
+        "shot_budget": 75,
+        "budget_remaining": 32,
+        "total_hits": 12,
+        "total_misses": 31,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 44,
+      "available_actions_count": 57,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          8,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 44,
+        "shot_budget": 75,
+        "budget_remaining": 31,
+        "total_hits": 12,
+        "total_misses": 32,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 45,
+      "available_actions_count": 56,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        3,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          3,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 45,
+        "shot_budget": 75,
+        "budget_remaining": 30,
+        "total_hits": 12,
+        "total_misses": 33,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 46,
+      "available_actions_count": 55,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            5
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        7,
+        5
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          7,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 46,
+        "shot_budget": 75,
+        "budget_remaining": 29,
+        "total_hits": 12,
+        "total_misses": 34,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 47,
+      "available_actions_count": 54,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.001,
+      "percept": {
+        "coord": [
+          8,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.002
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 47,
+        "shot_budget": 75,
+        "budget_remaining": 28,
+        "total_hits": 13,
+        "total_misses": 34,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 4,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 48,
+      "available_actions_count": 53,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 2,
+        "hits_count": 13,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        7,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          7,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 48,
+        "shot_budget": 75,
+        "budget_remaining": 27,
+        "total_hits": 14,
+        "total_misses": 34,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 3,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 49,
+      "available_actions_count": 52,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 3,
+        "hits_count": 14,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": "Submarine"
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 49,
+        "shot_budget": 75,
+        "budget_remaining": 26,
+        "total_hits": 15,
+        "total_misses": 34,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 2,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 50,
+      "available_actions_count": 51,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 3,
+        "hits_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        8,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          8,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 50,
+        "shot_budget": 75,
+        "budget_remaining": 25,
+        "total_hits": 15,
+        "total_misses": 35,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 2,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 51,
+      "available_actions_count": 50,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 2,
+        "hits_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        6,
+        0
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          6,
+          0
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 51,
+        "shot_budget": 75,
+        "budget_remaining": 24,
+        "total_hits": 15,
+        "total_misses": 36,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 2,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 52,
+      "available_actions_count": 49,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "TARGET",
+        "target_queue_len": 1,
+        "hits_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        7,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          7,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.0
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 52,
+        "shot_budget": 75,
+        "budget_remaining": 23,
+        "total_hits": 15,
+        "total_misses": 37,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 2,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 53,
+      "available_actions_count": 48,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            1
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        1
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          1
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "TARGET",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 53,
+        "shot_budget": 75,
+        "budget_remaining": 22,
+        "total_hits": 16,
+        "total_misses": 37,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 1,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 54,
+      "available_actions_count": 47,
+      "belief_before": {
+        "agent": "hunt_target",
+        "mode": "HUNT",
+        "target_queue_len": 0,
+        "hits_count": 16,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ]
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            9,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0
+        }
+      ],
+      "chosen_action": [
+        9,
+        2
+      ],
+      "chosen_prob": 0.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "decision_time_ms": 0.0,
+      "percept": {
+        "coord": [
+          9,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": "Destroyer"
+      },
+      "belief_after": {
+        "mode": "HUNT",
+        "survived_particles": 0,
+        "particle_count": 0,
+        "unique_particles": 0,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0.0,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.001
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 54,
+        "shot_budget": 75,
+        "budget_remaining": 21,
+        "total_hits": 17,
+        "total_misses": 37,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "remaining_ship_cells": 0,
+        "status": "VICTORY"
+      }
+    }
+  ]
+}
