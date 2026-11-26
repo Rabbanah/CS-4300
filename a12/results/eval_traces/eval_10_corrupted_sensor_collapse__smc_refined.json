@@ -1,0 +1,180 @@
+{
+  "case_id": "eval_10_corrupted_sensor_collapse__smc_refined",
+  "agent_name": "smc_refined_max_prob",
+  "status": "BELIEF_COLLAPSE",
+  "success": false,
+  "shots_taken": 1,
+  "shot_budget": 36,
+  "total_ship_cells": 5,
+  "hits": 0,
+  "misses": 1,
+  "sunk_ships": [],
+  "hit_rate": 0.0,
+  "mean_step_latency_ms": 0.024,
+  "max_step_latency_ms": 0.024,
+  "total_step_time_ms": 0.024,
+  "mean_entropy_reduction_bits": 0.0,
+  "rejuvenation_events": 0,
+  "repair_events": 0,
+  "total_mcmc_moves": 0,
+  "exact_fallback_step": 0,
+  "error_message": "Belief state collapsed after ShotResult(coord=(2, 2), hit=True, sunk_ship='Cruiser'): at least one ship has zero consistent placements.",
+  "config_summary": {
+    "rows": 6,
+    "cols": 6,
+    "fleet_spec": {
+      "Cruiser": 3,
+      "Destroyer": 2
+    },
+    "shot_budget": 36,
+    "env_seed": 4300,
+    "agent_type": "smc_refined",
+    "agent_seed": 4300,
+    "num_particles": 250,
+    "has_fixed_ships": false
+  },
+  "final_env_state": {
+    "rows": 6,
+    "cols": 6,
+    "shots_taken": 1,
+    "shot_budget": 36,
+    "budget_remaining": 35,
+    "total_hits": 0,
+    "total_misses": 1,
+    "sunk_ships": [],
+    "remaining_ship_cells": 5,
+    "status": "RUNNING",
+    "ground_truth_ships": {
+      "Cruiser": [
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "Destroyer": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "available_actions_count": 36,
+      "belief_before": {
+        "agent": "smc_refined_max_prob",
+        "policy": "max_prob",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 2472,
+        "unique_particles": 2472,
+        "hits_count": 0,
+        "misses_count": 0,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 20.717883
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            2
+          ],
+          "probability": 0.184466,
+          "cell_entropy_bits": 0.68975,
+          "expected_info_gain_bits": 0.68975,
+          "selection_score": 0.184466
+        },
+        {
+          "coord": [
+            2,
+            3
+          ],
+          "probability": 0.184466,
+          "cell_entropy_bits": 0.68975,
+          "expected_info_gain_bits": 0.68975,
+          "selection_score": 0.184466
+        },
+        {
+          "coord": [
+            3,
+            2
+          ],
+          "probability": 0.184466,
+          "cell_entropy_bits": 0.68975,
+          "expected_info_gain_bits": 0.68975,
+          "selection_score": 0.184466
+        },
+        {
+          "coord": [
+            3,
+            3
+          ],
+          "probability": 0.184466,
+          "cell_entropy_bits": 0.68975,
+          "expected_info_gain_bits": 0.68975,
+          "selection_score": 0.184466
+        },
+        {
+          "coord": [
+            1,
+            2
+          ],
+          "probability": 0.166667,
+          "cell_entropy_bits": 0.650022,
+          "expected_info_gain_bits": 0.650022,
+          "selection_score": 0.166667
+        }
+      ],
+      "chosen_action": [
+        2,
+        2
+      ],
+      "chosen_prob": 0.184466,
+      "chosen_cell_entropy_bits": 0.68975,
+      "chosen_expected_info_gain_bits": 0.68975,
+      "decision_time_ms": 0.024,
+      "percept": {
+        "coord": [
+          2,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": "Cruiser"
+      },
+      "belief_after": {
+        "error": "Belief state collapsed after ShotResult(coord=(2, 2), hit=True, sunk_ship='Cruiser'): at least one ship has zero consistent placements.",
+        "particle_count": 0
+      },
+      "env_effect": {
+        "rows": 6,
+        "cols": 6,
+        "shots_taken": 1,
+        "shot_budget": 36,
+        "budget_remaining": 35,
+        "total_hits": 0,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    }
+  ]
+}

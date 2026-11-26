@@ -1,0 +1,1 @@
+python a12/evaluation.py --seeds 30 --seed-start 4300 --particles 250

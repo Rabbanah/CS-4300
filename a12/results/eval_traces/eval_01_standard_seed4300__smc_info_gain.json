@@ -1,0 +1,4326 @@
+{
+  "case_id": "eval_01_standard_seed4300__smc_info_gain",
+  "agent_name": "smc_info_gain",
+  "status": "VICTORY",
+  "success": true,
+  "shots_taken": 35,
+  "shot_budget": 75,
+  "total_ship_cells": 17,
+  "hits": 17,
+  "misses": 18,
+  "sunk_ships": [
+    "Carrier",
+    "Battleship",
+    "Submarine",
+    "Cruiser",
+    "Destroyer"
+  ],
+  "hit_rate": 0.4857,
+  "mean_step_latency_ms": 4.727,
+  "max_step_latency_ms": 13.048,
+  "total_step_time_ms": 165.436,
+  "mean_entropy_reduction_bits": 1.8468,
+  "rejuvenation_events": 28,
+  "repair_events": 0,
+  "total_mcmc_moves": 22501,
+  "exact_fallback_step": 29,
+  "error_message": null,
+  "config_summary": {
+    "rows": 10,
+    "cols": 10,
+    "fleet_spec": {
+      "Carrier": 5,
+      "Battleship": 4,
+      "Cruiser": 3,
+      "Submarine": 3,
+      "Destroyer": 2
+    },
+    "shot_budget": 75,
+    "env_seed": 4300,
+    "agent_type": "smc_info_gain",
+    "agent_seed": 4300,
+    "num_particles": 250,
+    "has_fixed_ships": false
+  },
+  "final_env_state": {
+    "rows": 10,
+    "cols": 10,
+    "shots_taken": 35,
+    "shot_budget": 75,
+    "budget_remaining": 40,
+    "total_hits": 17,
+    "total_misses": 18,
+    "sunk_ships": [
+      "Carrier",
+      "Battleship",
+      "Submarine",
+      "Cruiser",
+      "Destroyer"
+    ],
+    "remaining_ship_cells": 0,
+    "status": "VICTORY",
+    "ground_truth_ships": {
+      "Carrier": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "Battleship": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "Cruiser": [
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "Submarine": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "Destroyer": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "available_actions_count": 100,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 0,
+        "misses_count": 0,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 64.636569
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            3
+          ],
+          "probability": 0.276,
+          "cell_entropy_bits": 0.849943,
+          "expected_info_gain_bits": 0.849943,
+          "selection_score": 0.57348
+        },
+        {
+          "coord": [
+            5,
+            3
+          ],
+          "probability": 0.256,
+          "cell_entropy_bits": 0.82065,
+          "expected_info_gain_bits": 0.82065,
+          "selection_score": 0.543228
+        },
+        {
+          "coord": [
+            4,
+            3
+          ],
+          "probability": 0.248,
+          "cell_entropy_bits": 0.808093,
+          "expected_info_gain_bits": 0.808093,
+          "selection_score": 0.530832
+        },
+        {
+          "coord": [
+            6,
+            4
+          ],
+          "probability": 0.248,
+          "cell_entropy_bits": 0.808093,
+          "expected_info_gain_bits": 0.808093,
+          "selection_score": 0.530832
+        },
+        {
+          "coord": [
+            6,
+            7
+          ],
+          "probability": 0.236,
+          "cell_entropy_bits": 0.788325,
+          "expected_info_gain_bits": 0.788325,
+          "selection_score": 0.511914
+        }
+      ],
+      "chosen_action": [
+        6,
+        3
+      ],
+      "chosen_prob": 0.276,
+      "chosen_cell_entropy_bits": 0.849943,
+      "chosen_expected_info_gain_bits": 0.849943,
+      "decision_time_ms": 1.181,
+      "percept": {
+        "coord": [
+          6,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 181,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 345,
+        "mcmc_moves_accepted": 340,
+        "board_entropy_bits": 64.485139,
+        "entropy_reduction_bits": 0.151431,
+        "update_time_ms": 2.367
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 1,
+        "shot_budget": 75,
+        "budget_remaining": 74,
+        "total_hits": 0,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 17,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 2,
+      "available_actions_count": 99,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 0,
+        "misses_count": 1,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 64.485139
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            8
+          ],
+          "probability": 0.268,
+          "cell_entropy_bits": 0.83858,
+          "expected_info_gain_bits": 0.83858,
+          "selection_score": 0.561503
+        },
+        {
+          "coord": [
+            3,
+            7
+          ],
+          "probability": 0.252,
+          "cell_entropy_bits": 0.814433,
+          "expected_info_gain_bits": 0.814433,
+          "selection_score": 0.537051
+        },
+        {
+          "coord": [
+            7,
+            4
+          ],
+          "probability": 0.252,
+          "cell_entropy_bits": 0.814433,
+          "expected_info_gain_bits": 0.814433,
+          "selection_score": 0.537051
+        },
+        {
+          "coord": [
+            5,
+            4
+          ],
+          "probability": 0.244,
+          "cell_entropy_bits": 0.801629,
+          "expected_info_gain_bits": 0.801629,
+          "selection_score": 0.52457
+        },
+        {
+          "coord": [
+            4,
+            8
+          ],
+          "probability": 0.24,
+          "cell_entropy_bits": 0.79504,
+          "expected_info_gain_bits": 0.79504,
+          "selection_score": 0.518264
+        }
+      ],
+      "chosen_action": [
+        3,
+        8
+      ],
+      "chosen_prob": 0.268,
+      "chosen_cell_entropy_bits": 0.83858,
+      "chosen_expected_info_gain_bits": 0.83858,
+      "decision_time_ms": 1.476,
+      "percept": {
+        "coord": [
+          3,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 67,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1968,
+        "mcmc_moves_accepted": 1859,
+        "board_entropy_bits": 60.252295,
+        "entropy_reduction_bits": 4.232844,
+        "update_time_ms": 7.704
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 2,
+        "shot_budget": 75,
+        "budget_remaining": 73,
+        "total_hits": 1,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 16,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 3,
+      "available_actions_count": 98,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 1,
+        "misses_count": 1,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 60.252295
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            8
+          ],
+          "probability": 0.552,
+          "cell_entropy_bits": 0.992184,
+          "expected_info_gain_bits": 1.15197,
+          "selection_score": 0.955189
+        },
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.44,
+          "cell_entropy_bits": 0.989588,
+          "expected_info_gain_bits": 1.155036,
+          "selection_score": 0.844263
+        },
+        {
+          "coord": [
+            3,
+            7
+          ],
+          "probability": 0.4,
+          "cell_entropy_bits": 0.970951,
+          "expected_info_gain_bits": 1.11732,
+          "selection_score": 0.791062
+        },
+        {
+          "coord": [
+            5,
+            8
+          ],
+          "probability": 0.412,
+          "cell_entropy_bits": 0.977539,
+          "expected_info_gain_bits": 0.977539,
+          "selection_score": 0.754139
+        },
+        {
+          "coord": [
+            3,
+            6
+          ],
+          "probability": 0.38,
+          "cell_entropy_bits": 0.958042,
+          "expected_info_gain_bits": 0.958042,
+          "selection_score": 0.715315
+        }
+      ],
+      "chosen_action": [
+        4,
+        8
+      ],
+      "chosen_prob": 0.552,
+      "chosen_cell_entropy_bits": 0.992184,
+      "chosen_expected_info_gain_bits": 1.15197,
+      "decision_time_ms": 1.049,
+      "percept": {
+        "coord": [
+          4,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 131,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1293,
+        "mcmc_moves_accepted": 1160,
+        "board_entropy_bits": 57.20555,
+        "entropy_reduction_bits": 3.046745,
+        "update_time_ms": 6.631
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 3,
+        "shot_budget": 75,
+        "budget_remaining": 72,
+        "total_hits": 2,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 15,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 4,
+      "available_actions_count": 97,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 2,
+        "misses_count": 1,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 57.20555
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            8
+          ],
+          "probability": 0.66,
+          "cell_entropy_bits": 0.924819,
+          "expected_info_gain_bits": 1.584089,
+          "selection_score": 1.214431
+        },
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.532,
+          "cell_entropy_bits": 0.997043,
+          "expected_info_gain_bits": 1.593891,
+          "selection_score": 1.089862
+        },
+        {
+          "coord": [
+            6,
+            8
+          ],
+          "probability": 0.396,
+          "cell_entropy_bits": 0.968563,
+          "expected_info_gain_bits": 0.968563,
+          "selection_score": 0.734997
+        },
+        {
+          "coord": [
+            3,
+            6
+          ],
+          "probability": 0.312,
+          "cell_entropy_bits": 0.895469,
+          "expected_info_gain_bits": 0.895469,
+          "selection_score": 0.625414
+        },
+        {
+          "coord": [
+            3,
+            7
+          ],
+          "probability": 0.288,
+          "cell_entropy_bits": 0.866124,
+          "expected_info_gain_bits": 0.955272,
+          "selection_score": 0.622345
+        }
+      ],
+      "chosen_action": [
+        5,
+        8
+      ],
+      "chosen_prob": 0.66,
+      "chosen_cell_entropy_bits": 0.924819,
+      "chosen_expected_info_gain_bits": 1.584089,
+      "decision_time_ms": 1.084,
+      "percept": {
+        "coord": [
+          5,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 131,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1328,
+        "mcmc_moves_accepted": 1116,
+        "board_entropy_bits": 53.99508,
+        "entropy_reduction_bits": 3.21047,
+        "update_time_ms": 5.317
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 4,
+        "shot_budget": 75,
+        "budget_remaining": 71,
+        "total_hits": 3,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 14,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 5,
+      "available_actions_count": 96,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 3,
+        "misses_count": 1,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 53.99508
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            8
+          ],
+          "probability": 0.664,
+          "cell_entropy_bits": 0.920939,
+          "expected_info_gain_bits": 1.769591,
+          "selection_score": 1.283357
+        },
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.572,
+          "cell_entropy_bits": 0.98499,
+          "expected_info_gain_bits": 1.635984,
+          "selection_score": 1.144594
+        },
+        {
+          "coord": [
+            7,
+            8
+          ],
+          "probability": 0.4,
+          "cell_entropy_bits": 0.970951,
+          "expected_info_gain_bits": 0.970951,
+          "selection_score": 0.739833
+        },
+        {
+          "coord": [
+            3,
+            7
+          ],
+          "probability": 0.312,
+          "cell_entropy_bits": 0.895469,
+          "expected_info_gain_bits": 1.002647,
+          "selection_score": 0.662926
+        },
+        {
+          "coord": [
+            1,
+            8
+          ],
+          "probability": 0.332,
+          "cell_entropy_bits": 0.916957,
+          "expected_info_gain_bits": 0.916957,
+          "selection_score": 0.652935
+        }
+      ],
+      "chosen_action": [
+        6,
+        8
+      ],
+      "chosen_prob": 0.664,
+      "chosen_cell_entropy_bits": 0.920939,
+      "chosen_expected_info_gain_bits": 1.769591,
+      "decision_time_ms": 1.016,
+      "percept": {
+        "coord": [
+          6,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 121,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1444,
+        "mcmc_moves_accepted": 1129,
+        "board_entropy_bits": 51.039236,
+        "entropy_reduction_bits": 2.955844,
+        "update_time_ms": 5.739
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 5,
+        "shot_budget": 75,
+        "budget_remaining": 70,
+        "total_hits": 4,
+        "total_misses": 1,
+        "sunk_ships": [],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 6,
+      "available_actions_count": 95,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 4,
+        "misses_count": 1,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 51.039236
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            8
+          ],
+          "probability": 0.736,
+          "cell_entropy_bits": 0.832723,
+          "expected_info_gain_bits": 2.359217,
+          "selection_score": 1.561726
+        },
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.536,
+          "cell_entropy_bits": 0.996257,
+          "expected_info_gain_bits": 1.9969,
+          "selection_score": 1.234915
+        },
+        {
+          "coord": [
+            3,
+            7
+          ],
+          "probability": 0.348,
+          "cell_entropy_bits": 0.932269,
+          "expected_info_gain_bits": 1.099251,
+          "selection_score": 0.732738
+        },
+        {
+          "coord": [
+            8,
+            8
+          ],
+          "probability": 0.34,
+          "cell_entropy_bits": 0.924819,
+          "expected_info_gain_bits": 0.924819,
+          "selection_score": 0.663687
+        },
+        {
+          "coord": [
+            3,
+            6
+          ],
+          "probability": 0.26,
+          "cell_entropy_bits": 0.826746,
+          "expected_info_gain_bits": 0.826746,
+          "selection_score": 0.549361
+        }
+      ],
+      "chosen_action": [
+        7,
+        8
+      ],
+      "chosen_prob": 0.736,
+      "chosen_cell_entropy_bits": 0.832723,
+      "chosen_expected_info_gain_bits": 2.359217,
+      "decision_time_ms": 1.263,
+      "percept": {
+        "coord": [
+          7,
+          8
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 66,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 2067,
+        "mcmc_moves_accepted": 1537,
+        "board_entropy_bits": 48.528756,
+        "entropy_reduction_bits": 2.51048,
+        "update_time_ms": 6.808
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 6,
+        "shot_budget": 75,
+        "budget_remaining": 69,
+        "total_hits": 4,
+        "total_misses": 2,
+        "sunk_ships": [],
+        "remaining_ship_cells": 13,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 7,
+      "available_actions_count": 94,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 4,
+        "misses_count": 2,
+        "sunk_ships": [],
+        "remaining_ships": [
+          "Carrier",
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 48.528756
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            8
+          ],
+          "probability": 0.96,
+          "cell_entropy_bits": 0.242292,
+          "expected_info_gain_bits": 2.0094,
+          "selection_score": 1.66329
+        },
+        {
+          "coord": [
+            6,
+            7
+          ],
+          "probability": 0.644,
+          "cell_entropy_bits": 0.939313,
+          "expected_info_gain_bits": 1.227152,
+          "selection_score": 1.073503
+        },
+        {
+          "coord": [
+            1,
+            8
+          ],
+          "probability": 0.428,
+          "cell_entropy_bits": 0.98499,
+          "expected_info_gain_bits": 0.98499,
+          "selection_score": 0.772747
+        },
+        {
+          "coord": [
+            6,
+            6
+          ],
+          "probability": 0.412,
+          "cell_entropy_bits": 0.977539,
+          "expected_info_gain_bits": 0.977539,
+          "selection_score": 0.754139
+        },
+        {
+          "coord": [
+            6,
+            9
+          ],
+          "probability": 0.328,
+          "cell_entropy_bits": 0.91287,
+          "expected_info_gain_bits": 1.16903,
+          "selection_score": 0.73716
+        }
+      ],
+      "chosen_action": [
+        2,
+        8
+      ],
+      "chosen_prob": 0.96,
+      "chosen_cell_entropy_bits": 0.242292,
+      "chosen_expected_info_gain_bits": 2.0094,
+      "decision_time_ms": 1.106,
+      "percept": {
+        "coord": [
+          2,
+          8
+        ],
+        "hit": true,
+        "sunk_ship": "Carrier"
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 95,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1240,
+        "mcmc_moves_accepted": 1226,
+        "board_entropy_bits": 50.97206,
+        "entropy_reduction_bits": -2.443305,
+        "update_time_ms": 3.702
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 7,
+        "shot_budget": 75,
+        "budget_remaining": 68,
+        "total_hits": 5,
+        "total_misses": 2,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 12,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 8,
+      "available_actions_count": 93,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 5,
+        "misses_count": 2,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 50.97206
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            5
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        },
+        {
+          "coord": [
+            6,
+            7
+          ],
+          "probability": 0.192,
+          "cell_entropy_bits": 0.705637,
+          "expected_info_gain_bits": 0.705637,
+          "selection_score": 0.438973
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            2,
+            2
+          ],
+          "probability": 0.18,
+          "cell_entropy_bits": 0.680077,
+          "expected_info_gain_bits": 0.680077,
+          "selection_score": 0.418027
+        }
+      ],
+      "chosen_action": [
+        3,
+        5
+      ],
+      "chosen_prob": 0.196,
+      "chosen_cell_entropy_bits": 0.713856,
+      "chosen_expected_info_gain_bits": 0.713856,
+      "decision_time_ms": 1.879,
+      "percept": {
+        "coord": [
+          3,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 201,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 196,
+        "mcmc_moves_accepted": 192,
+        "board_entropy_bits": 50.738632,
+        "entropy_reduction_bits": 0.233428,
+        "update_time_ms": 2.841
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 8,
+        "shot_budget": 75,
+        "budget_remaining": 67,
+        "total_hits": 5,
+        "total_misses": 3,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 12,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 9,
+      "available_actions_count": 92,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 5,
+        "misses_count": 3,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 50.738632
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            4
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        },
+        {
+          "coord": [
+            7,
+            5
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        },
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        },
+        {
+          "coord": [
+            2,
+            2
+          ],
+          "probability": 0.192,
+          "cell_entropy_bits": 0.705637,
+          "expected_info_gain_bits": 0.705637,
+          "selection_score": 0.438973
+        },
+        {
+          "coord": [
+            6,
+            7
+          ],
+          "probability": 0.188,
+          "cell_entropy_bits": 0.697269,
+          "expected_info_gain_bits": 0.697269,
+          "selection_score": 0.432044
+        }
+      ],
+      "chosen_action": [
+        7,
+        4
+      ],
+      "chosen_prob": 0.196,
+      "chosen_cell_entropy_bits": 0.713856,
+      "chosen_expected_info_gain_bits": 0.713856,
+      "decision_time_ms": 1.334,
+      "percept": {
+        "coord": [
+          7,
+          4
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 201,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 196,
+        "mcmc_moves_accepted": 195,
+        "board_entropy_bits": 50.470723,
+        "entropy_reduction_bits": 0.267909,
+        "update_time_ms": 2.959
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 9,
+        "shot_budget": 75,
+        "budget_remaining": 66,
+        "total_hits": 5,
+        "total_misses": 4,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 12,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 10,
+      "available_actions_count": 91,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 5,
+        "misses_count": 4,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 50.470723
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            3
+          ],
+          "probability": 0.212,
+          "cell_entropy_bits": 0.745288,
+          "expected_info_gain_bits": 0.745288,
+          "selection_score": 0.472851
+        },
+        {
+          "coord": [
+            6,
+            7
+          ],
+          "probability": 0.204,
+          "cell_entropy_bits": 0.729856,
+          "expected_info_gain_bits": 0.729856,
+          "selection_score": 0.45945
+        },
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.204,
+          "cell_entropy_bits": 0.729856,
+          "expected_info_gain_bits": 0.729856,
+          "selection_score": 0.45945
+        },
+        {
+          "coord": [
+            8,
+            5
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        },
+        {
+          "coord": [
+            6,
+            5
+          ],
+          "probability": 0.192,
+          "cell_entropy_bits": 0.705637,
+          "expected_info_gain_bits": 0.705637,
+          "selection_score": 0.438973
+        }
+      ],
+      "chosen_action": [
+        2,
+        3
+      ],
+      "chosen_prob": 0.212,
+      "chosen_cell_entropy_bits": 0.745288,
+      "chosen_expected_info_gain_bits": 0.745288,
+      "decision_time_ms": 1.566,
+      "percept": {
+        "coord": [
+          2,
+          3
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 53,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1776,
+        "mcmc_moves_accepted": 1685,
+        "board_entropy_bits": 45.628999,
+        "entropy_reduction_bits": 4.841724,
+        "update_time_ms": 11.222
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 10,
+        "shot_budget": 75,
+        "budget_remaining": 65,
+        "total_hits": 6,
+        "total_misses": 4,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 11,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 11,
+      "available_actions_count": 90,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 6,
+        "misses_count": 4,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 45.628999
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            3
+          ],
+          "probability": 0.416,
+          "cell_entropy_bits": 0.979544,
+          "expected_info_gain_bits": 1.194178,
+          "selection_score": 0.833962
+        },
+        {
+          "coord": [
+            2,
+            2
+          ],
+          "probability": 0.436,
+          "cell_entropy_bits": 0.988149,
+          "expected_info_gain_bits": 1.1222,
+          "selection_score": 0.82877
+        },
+        {
+          "coord": [
+            2,
+            4
+          ],
+          "probability": 0.416,
+          "cell_entropy_bits": 0.979544,
+          "expected_info_gain_bits": 1.142301,
+          "selection_score": 0.815805
+        },
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.364,
+          "cell_entropy_bits": 0.945953,
+          "expected_info_gain_bits": 1.057717,
+          "selection_score": 0.734201
+        },
+        {
+          "coord": [
+            2,
+            1
+          ],
+          "probability": 0.296,
+          "cell_entropy_bits": 0.876346,
+          "expected_info_gain_bits": 0.876346,
+          "selection_score": 0.602721
+        }
+      ],
+      "chosen_action": [
+        3,
+        3
+      ],
+      "chosen_prob": 0.416,
+      "chosen_cell_entropy_bits": 0.979544,
+      "chosen_expected_info_gain_bits": 1.194178,
+      "decision_time_ms": 1.532,
+      "percept": {
+        "coord": [
+          3,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 146,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 832,
+        "mcmc_moves_accepted": 761,
+        "board_entropy_bits": 44.4536,
+        "entropy_reduction_bits": 1.1754,
+        "update_time_ms": 3.6
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 11,
+        "shot_budget": 75,
+        "budget_remaining": 64,
+        "total_hits": 6,
+        "total_misses": 5,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 11,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 12,
+      "available_actions_count": 89,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 6,
+        "misses_count": 5,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 44.4536
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            2
+          ],
+          "probability": 0.608,
+          "cell_entropy_bits": 0.966078,
+          "expected_info_gain_bits": 1.193896,
+          "selection_score": 1.025864
+        },
+        {
+          "coord": [
+            2,
+            4
+          ],
+          "probability": 0.6,
+          "cell_entropy_bits": 0.970951,
+          "expected_info_gain_bits": 1.197896,
+          "selection_score": 1.019263
+        },
+        {
+          "coord": [
+            2,
+            1
+          ],
+          "probability": 0.404,
+          "cell_entropy_bits": 0.973242,
+          "expected_info_gain_bits": 0.973242,
+          "selection_score": 0.744635
+        },
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.304,
+          "cell_entropy_bits": 0.886126,
+          "expected_info_gain_bits": 1.086798,
+          "selection_score": 0.684379
+        },
+        {
+          "coord": [
+            2,
+            5
+          ],
+          "probability": 0.32,
+          "cell_entropy_bits": 0.904381,
+          "expected_info_gain_bits": 0.904381,
+          "selection_score": 0.636534
+        }
+      ],
+      "chosen_action": [
+        2,
+        2
+      ],
+      "chosen_prob": 0.608,
+      "chosen_cell_entropy_bits": 0.966078,
+      "chosen_expected_info_gain_bits": 1.193896,
+      "decision_time_ms": 1.109,
+      "percept": {
+        "coord": [
+          2,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 98,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1216,
+        "mcmc_moves_accepted": 1010,
+        "board_entropy_bits": 44.415516,
+        "entropy_reduction_bits": 0.038084,
+        "update_time_ms": 11.939
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 12,
+        "shot_budget": 75,
+        "budget_remaining": 63,
+        "total_hits": 6,
+        "total_misses": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 11,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 13,
+      "available_actions_count": 88,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 6,
+        "misses_count": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 44.415516
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            4
+          ],
+          "probability": 0.668,
+          "cell_entropy_bits": 0.916957,
+          "expected_info_gain_bits": 1.379371,
+          "selection_score": 1.15078
+        },
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.44,
+          "cell_entropy_bits": 0.989588,
+          "expected_info_gain_bits": 1.361542,
+          "selection_score": 0.91654
+        },
+        {
+          "coord": [
+            2,
+            5
+          ],
+          "probability": 0.5,
+          "cell_entropy_bits": 1.0,
+          "expected_info_gain_bits": 1.0,
+          "selection_score": 0.85
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.34,
+          "cell_entropy_bits": 0.924819,
+          "expected_info_gain_bits": 0.924819,
+          "selection_score": 0.663687
+        },
+        {
+          "coord": [
+            2,
+            6
+          ],
+          "probability": 0.256,
+          "cell_entropy_bits": 0.82065,
+          "expected_info_gain_bits": 0.82065,
+          "selection_score": 0.543228
+        }
+      ],
+      "chosen_action": [
+        2,
+        4
+      ],
+      "chosen_prob": 0.668,
+      "chosen_cell_entropy_bits": 0.916957,
+      "chosen_expected_info_gain_bits": 1.379371,
+      "decision_time_ms": 1.633,
+      "percept": {
+        "coord": [
+          2,
+          4
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 136,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1052,
+        "mcmc_moves_accepted": 798,
+        "board_entropy_bits": 41.284729,
+        "entropy_reduction_bits": 3.130787,
+        "update_time_ms": 6.348
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 13,
+        "shot_budget": 75,
+        "budget_remaining": 62,
+        "total_hits": 7,
+        "total_misses": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 10,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 14,
+      "available_actions_count": 87,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 7,
+        "misses_count": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 41.284729
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            5
+          ],
+          "probability": 0.756,
+          "cell_entropy_bits": 0.801629,
+          "expected_info_gain_bits": 2.074596,
+          "selection_score": 1.482108
+        },
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.384,
+          "cell_entropy_bits": 0.960818,
+          "expected_info_gain_bits": 1.317309,
+          "selection_score": 0.845058
+        },
+        {
+          "coord": [
+            2,
+            6
+          ],
+          "probability": 0.352,
+          "cell_entropy_bits": 0.935842,
+          "expected_info_gain_bits": 0.935842,
+          "selection_score": 0.679545
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.276,
+          "cell_entropy_bits": 0.849943,
+          "expected_info_gain_bits": 0.849943,
+          "selection_score": 0.57348
+        },
+        {
+          "coord": [
+            3,
+            4
+          ],
+          "probability": 0.248,
+          "cell_entropy_bits": 0.808093,
+          "expected_info_gain_bits": 0.908396,
+          "selection_score": 0.565939
+        }
+      ],
+      "chosen_action": [
+        2,
+        5
+      ],
+      "chosen_prob": 0.756,
+      "chosen_cell_entropy_bits": 0.801629,
+      "chosen_expected_info_gain_bits": 2.074596,
+      "decision_time_ms": 3.02,
+      "percept": {
+        "coord": [
+          2,
+          5
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 81,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1570,
+        "mcmc_moves_accepted": 1091,
+        "board_entropy_bits": 36.938449,
+        "entropy_reduction_bits": 4.34628,
+        "update_time_ms": 7.268
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 14,
+        "shot_budget": 75,
+        "budget_remaining": 61,
+        "total_hits": 8,
+        "total_misses": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ship_cells": 9,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 15,
+      "available_actions_count": 86,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 8,
+        "misses_count": 6,
+        "sunk_ships": [
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Battleship",
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 36.938449
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            2,
+            6
+          ],
+          "probability": 0.94,
+          "cell_entropy_bits": 0.327445,
+          "expected_info_gain_bits": 1.766961,
+          "selection_score": 1.558436
+        },
+        {
+          "coord": [
+            1,
+            3
+          ],
+          "probability": 0.484,
+          "cell_entropy_bits": 0.999261,
+          "expected_info_gain_bits": 1.468249,
+          "selection_score": 0.997887
+        },
+        {
+          "coord": [
+            2,
+            7
+          ],
+          "probability": 0.304,
+          "cell_entropy_bits": 0.886126,
+          "expected_info_gain_bits": 0.886126,
+          "selection_score": 0.614144
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.288,
+          "cell_entropy_bits": 0.866124,
+          "expected_info_gain_bits": 0.866124,
+          "selection_score": 0.591143
+        },
+        {
+          "coord": [
+            4,
+            4
+          ],
+          "probability": 0.188,
+          "cell_entropy_bits": 0.697269,
+          "expected_info_gain_bits": 0.697269,
+          "selection_score": 0.432044
+        }
+      ],
+      "chosen_action": [
+        2,
+        6
+      ],
+      "chosen_prob": 0.94,
+      "chosen_cell_entropy_bits": 0.327445,
+      "chosen_expected_info_gain_bits": 1.766961,
+      "decision_time_ms": 1.275,
+      "percept": {
+        "coord": [
+          2,
+          6
+        ],
+        "hit": true,
+        "sunk_ship": "Battleship"
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 140,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 660,
+        "mcmc_moves_accepted": 652,
+        "board_entropy_bits": 37.600528,
+        "entropy_reduction_bits": -0.662079,
+        "update_time_ms": 4.443
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 15,
+        "shot_budget": 75,
+        "budget_remaining": 60,
+        "total_hits": 9,
+        "total_misses": 6,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 16,
+      "available_actions_count": 85,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 6,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 37.600528
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            4
+          ],
+          "probability": 0.16,
+          "cell_entropy_bits": 0.63431,
+          "expected_info_gain_bits": 0.63431,
+          "selection_score": 0.382008
+        },
+        {
+          "coord": [
+            8,
+            5
+          ],
+          "probability": 0.16,
+          "cell_entropy_bits": 0.63431,
+          "expected_info_gain_bits": 0.63431,
+          "selection_score": 0.382008
+        },
+        {
+          "coord": [
+            5,
+            5
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        },
+        {
+          "coord": [
+            1,
+            7
+          ],
+          "probability": 0.144,
+          "cell_entropy_bits": 0.594619,
+          "expected_info_gain_bits": 0.594619,
+          "selection_score": 0.352117
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.144,
+          "cell_entropy_bits": 0.594619,
+          "expected_info_gain_bits": 0.594619,
+          "selection_score": 0.352117
+        }
+      ],
+      "chosen_action": [
+        5,
+        4
+      ],
+      "chosen_prob": 0.16,
+      "chosen_cell_entropy_bits": 0.63431,
+      "chosen_expected_info_gain_bits": 0.63431,
+      "decision_time_ms": 1.23,
+      "percept": {
+        "coord": [
+          5,
+          4
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 210,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 120,
+        "mcmc_moves_accepted": 120,
+        "board_entropy_bits": 37.406107,
+        "entropy_reduction_bits": 0.194421,
+        "update_time_ms": 1.711
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 16,
+        "shot_budget": 75,
+        "budget_remaining": 59,
+        "total_hits": 9,
+        "total_misses": 7,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 17,
+      "available_actions_count": 84,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 7,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 37.406107
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            5
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        },
+        {
+          "coord": [
+            8,
+            6
+          ],
+          "probability": 0.156,
+          "cell_entropy_bits": 0.624654,
+          "expected_info_gain_bits": 0.624654,
+          "selection_score": 0.374629
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        },
+        {
+          "coord": [
+            1,
+            7
+          ],
+          "probability": 0.144,
+          "cell_entropy_bits": 0.594619,
+          "expected_info_gain_bits": 0.594619,
+          "selection_score": 0.352117
+        },
+        {
+          "coord": [
+            3,
+            1
+          ],
+          "probability": 0.14,
+          "cell_entropy_bits": 0.584239,
+          "expected_info_gain_bits": 0.584239,
+          "selection_score": 0.344484
+        }
+      ],
+      "chosen_action": [
+        8,
+        5
+      ],
+      "chosen_prob": 0.164,
+      "chosen_cell_entropy_bits": 0.643794,
+      "chosen_expected_info_gain_bits": 0.643794,
+      "decision_time_ms": 0.646,
+      "percept": {
+        "coord": [
+          8,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 209,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 123,
+        "mcmc_moves_accepted": 123,
+        "board_entropy_bits": 37.288988,
+        "entropy_reduction_bits": 0.117119,
+        "update_time_ms": 1.184
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 17,
+        "shot_budget": 75,
+        "budget_remaining": 58,
+        "total_hits": 9,
+        "total_misses": 8,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 18,
+      "available_actions_count": 83,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 8,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 37.288988
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            6
+          ],
+          "probability": 0.156,
+          "cell_entropy_bits": 0.624654,
+          "expected_info_gain_bits": 0.624654,
+          "selection_score": 0.374629
+        },
+        {
+          "coord": [
+            7,
+            6
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        },
+        {
+          "coord": [
+            8,
+            2
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.144,
+          "cell_entropy_bits": 0.594619,
+          "expected_info_gain_bits": 0.594619,
+          "selection_score": 0.352117
+        }
+      ],
+      "chosen_action": [
+        6,
+        6
+      ],
+      "chosen_prob": 0.156,
+      "chosen_cell_entropy_bits": 0.624654,
+      "chosen_expected_info_gain_bits": 0.624654,
+      "decision_time_ms": 0.706,
+      "percept": {
+        "coord": [
+          6,
+          6
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 211,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 117,
+        "mcmc_moves_accepted": 115,
+        "board_entropy_bits": 37.135339,
+        "entropy_reduction_bits": 0.153649,
+        "update_time_ms": 2.324
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 18,
+        "shot_budget": 75,
+        "budget_remaining": 57,
+        "total_hits": 9,
+        "total_misses": 9,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 19,
+      "available_actions_count": 82,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 9,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 37.135339
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            2
+          ],
+          "probability": 0.168,
+          "cell_entropy_bits": 0.653109,
+          "expected_info_gain_bits": 0.653109,
+          "selection_score": 0.396588
+        },
+        {
+          "coord": [
+            7,
+            2
+          ],
+          "probability": 0.156,
+          "cell_entropy_bits": 0.624654,
+          "expected_info_gain_bits": 0.624654,
+          "selection_score": 0.374629
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        },
+        {
+          "coord": [
+            4,
+            1
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        }
+      ],
+      "chosen_action": [
+        8,
+        2
+      ],
+      "chosen_prob": 0.168,
+      "chosen_cell_entropy_bits": 0.653109,
+      "chosen_expected_info_gain_bits": 0.653109,
+      "decision_time_ms": 1.71,
+      "percept": {
+        "coord": [
+          8,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 208,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 126,
+        "mcmc_moves_accepted": 125,
+        "board_entropy_bits": 36.845986,
+        "entropy_reduction_bits": 0.289353,
+        "update_time_ms": 1.722
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 19,
+        "shot_budget": 75,
+        "budget_remaining": 56,
+        "total_hits": 9,
+        "total_misses": 10,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 20,
+      "available_actions_count": 81,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 10,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 36.845986
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            1
+          ],
+          "probability": 0.168,
+          "cell_entropy_bits": 0.653109,
+          "expected_info_gain_bits": 0.653109,
+          "selection_score": 0.396588
+        },
+        {
+          "coord": [
+            4,
+            2
+          ],
+          "probability": 0.16,
+          "cell_entropy_bits": 0.63431,
+          "expected_info_gain_bits": 0.63431,
+          "selection_score": 0.382008
+        },
+        {
+          "coord": [
+            4,
+            5
+          ],
+          "probability": 0.16,
+          "cell_entropy_bits": 0.63431,
+          "expected_info_gain_bits": 0.63431,
+          "selection_score": 0.382008
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.148,
+          "cell_entropy_bits": 0.604813,
+          "expected_info_gain_bits": 0.604813,
+          "selection_score": 0.359684
+        }
+      ],
+      "chosen_action": [
+        4,
+        1
+      ],
+      "chosen_prob": 0.168,
+      "chosen_cell_entropy_bits": 0.653109,
+      "chosen_expected_info_gain_bits": 0.653109,
+      "decision_time_ms": 0.87,
+      "percept": {
+        "coord": [
+          4,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 208,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 126,
+        "mcmc_moves_accepted": 122,
+        "board_entropy_bits": 36.700611,
+        "entropy_reduction_bits": 0.145375,
+        "update_time_ms": 2.72
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 20,
+        "shot_budget": 75,
+        "budget_remaining": 55,
+        "total_hits": 9,
+        "total_misses": 11,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 21,
+      "available_actions_count": 80,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 11,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 36.700611
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            5
+          ],
+          "probability": 0.176,
+          "cell_entropy_bits": 0.671248,
+          "expected_info_gain_bits": 0.671248,
+          "selection_score": 0.410937
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        },
+        {
+          "coord": [
+            1,
+            7
+          ],
+          "probability": 0.156,
+          "cell_entropy_bits": 0.624654,
+          "expected_info_gain_bits": 0.624654,
+          "selection_score": 0.374629
+        },
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        }
+      ],
+      "chosen_action": [
+        4,
+        5
+      ],
+      "chosen_prob": 0.176,
+      "chosen_cell_entropy_bits": 0.671248,
+      "chosen_expected_info_gain_bits": 0.671248,
+      "decision_time_ms": 1.044,
+      "percept": {
+        "coord": [
+          4,
+          5
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 206,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 132,
+        "mcmc_moves_accepted": 130,
+        "board_entropy_bits": 36.318248,
+        "entropy_reduction_bits": 0.382363,
+        "update_time_ms": 1.443
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 21,
+        "shot_budget": 75,
+        "budget_remaining": 54,
+        "total_hits": 9,
+        "total_misses": 12,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 22,
+      "available_actions_count": 79,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 12,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 36.318248
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            7
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.176,
+          "cell_entropy_bits": 0.671248,
+          "expected_info_gain_bits": 0.671248,
+          "selection_score": 0.410937
+        },
+        {
+          "coord": [
+            0,
+            5
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        },
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        }
+      ],
+      "chosen_action": [
+        1,
+        7
+      ],
+      "chosen_prob": 0.184,
+      "chosen_cell_entropy_bits": 0.68875,
+      "chosen_expected_info_gain_bits": 0.68875,
+      "decision_time_ms": 0.794,
+      "percept": {
+        "coord": [
+          1,
+          7
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 204,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 138,
+        "mcmc_moves_accepted": 136,
+        "board_entropy_bits": 36.01343,
+        "entropy_reduction_bits": 0.304818,
+        "update_time_ms": 1.72
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 22,
+        "shot_budget": 75,
+        "budget_remaining": 53,
+        "total_hits": 9,
+        "total_misses": 13,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 8,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 23,
+      "available_actions_count": 78,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 9,
+        "misses_count": 13,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 36.01343
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            2
+          ],
+          "probability": 0.204,
+          "cell_entropy_bits": 0.729856,
+          "expected_info_gain_bits": 0.729856,
+          "selection_score": 0.45945
+        },
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.18,
+          "cell_entropy_bits": 0.680077,
+          "expected_info_gain_bits": 0.680077,
+          "selection_score": 0.418027
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.168,
+          "cell_entropy_bits": 0.653109,
+          "expected_info_gain_bits": 0.653109,
+          "selection_score": 0.396588
+        },
+        {
+          "coord": [
+            3,
+            0
+          ],
+          "probability": 0.168,
+          "cell_entropy_bits": 0.653109,
+          "expected_info_gain_bits": 0.653109,
+          "selection_score": 0.396588
+        },
+        {
+          "coord": [
+            6,
+            0
+          ],
+          "probability": 0.164,
+          "cell_entropy_bits": 0.643794,
+          "expected_info_gain_bits": 0.643794,
+          "selection_score": 0.389328
+        }
+      ],
+      "chosen_action": [
+        5,
+        2
+      ],
+      "chosen_prob": 0.204,
+      "chosen_cell_entropy_bits": 0.729856,
+      "chosen_expected_info_gain_bits": 0.729856,
+      "decision_time_ms": 0.954,
+      "percept": {
+        "coord": [
+          5,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 51,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 1441,
+        "mcmc_moves_accepted": 1329,
+        "board_entropy_bits": 31.255623,
+        "entropy_reduction_bits": 4.757807,
+        "update_time_ms": 7.388
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 23,
+        "shot_budget": 75,
+        "budget_remaining": 52,
+        "total_hits": 10,
+        "total_misses": 13,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 7,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 24,
+      "available_actions_count": 77,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 10,
+        "misses_count": 13,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 31.255623
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            5,
+            1
+          ],
+          "probability": 0.376,
+          "cell_entropy_bits": 0.955168,
+          "expected_info_gain_bits": 1.275058,
+          "selection_score": 0.82227
+        },
+        {
+          "coord": [
+            6,
+            2
+          ],
+          "probability": 0.38,
+          "cell_entropy_bits": 0.958042,
+          "expected_info_gain_bits": 1.240187,
+          "selection_score": 0.814066
+        },
+        {
+          "coord": [
+            4,
+            2
+          ],
+          "probability": 0.376,
+          "cell_entropy_bits": 0.955168,
+          "expected_info_gain_bits": 1.24331,
+          "selection_score": 0.811158
+        },
+        {
+          "coord": [
+            5,
+            3
+          ],
+          "probability": 0.192,
+          "cell_entropy_bits": 0.705637,
+          "expected_info_gain_bits": 0.881949,
+          "selection_score": 0.500682
+        },
+        {
+          "coord": [
+            5,
+            0
+          ],
+          "probability": 0.196,
+          "cell_entropy_bits": 0.713856,
+          "expected_info_gain_bits": 0.713856,
+          "selection_score": 0.445849
+        }
+      ],
+      "chosen_action": [
+        5,
+        1
+      ],
+      "chosen_prob": 0.376,
+      "chosen_cell_entropy_bits": 0.955168,
+      "chosen_expected_info_gain_bits": 1.275058,
+      "decision_time_ms": 0.769,
+      "percept": {
+        "coord": [
+          5,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 156,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 564,
+        "mcmc_moves_accepted": 497,
+        "board_entropy_bits": 30.226128,
+        "entropy_reduction_bits": 1.029496,
+        "update_time_ms": 1.881
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 24,
+        "shot_budget": 75,
+        "budget_remaining": 51,
+        "total_hits": 10,
+        "total_misses": 14,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 7,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 25,
+      "available_actions_count": 76,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 10,
+        "misses_count": 14,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 30.226128
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            6,
+            2
+          ],
+          "probability": 0.576,
+          "cell_entropy_bits": 0.983269,
+          "expected_info_gain_bits": 1.408521,
+          "selection_score": 1.068982
+        },
+        {
+          "coord": [
+            4,
+            2
+          ],
+          "probability": 0.576,
+          "cell_entropy_bits": 0.983269,
+          "expected_info_gain_bits": 1.392619,
+          "selection_score": 1.063417
+        },
+        {
+          "coord": [
+            3,
+            2
+          ],
+          "probability": 0.248,
+          "cell_entropy_bits": 0.808093,
+          "expected_info_gain_bits": 0.808093,
+          "selection_score": 0.530832
+        },
+        {
+          "coord": [
+            7,
+            2
+          ],
+          "probability": 0.24,
+          "cell_entropy_bits": 0.79504,
+          "expected_info_gain_bits": 0.79504,
+          "selection_score": 0.518264
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.144,
+          "cell_entropy_bits": 0.594619,
+          "expected_info_gain_bits": 0.594619,
+          "selection_score": 0.352117
+        }
+      ],
+      "chosen_action": [
+        6,
+        2
+      ],
+      "chosen_prob": 0.576,
+      "chosen_cell_entropy_bits": 0.983269,
+      "chosen_expected_info_gain_bits": 1.408521,
+      "decision_time_ms": 0.569,
+      "percept": {
+        "coord": [
+          6,
+          2
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 106,
+        "particle_count": 250,
+        "unique_particles": 250,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 864,
+        "mcmc_moves_accepted": 641,
+        "board_entropy_bits": 29.538605,
+        "entropy_reduction_bits": 0.687523,
+        "update_time_ms": 2.107
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 25,
+        "shot_budget": 75,
+        "budget_remaining": 50,
+        "total_hits": 10,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 7,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 26,
+      "available_actions_count": 75,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 250,
+        "hits_count": 10,
+        "misses_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 29.538605
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            4,
+            2
+          ],
+          "probability": 0.78,
+          "cell_entropy_bits": 0.760168,
+          "expected_info_gain_bits": 1.476438,
+          "selection_score": 1.296753
+        },
+        {
+          "coord": [
+            3,
+            2
+          ],
+          "probability": 0.548,
+          "cell_entropy_bits": 0.993342,
+          "expected_info_gain_bits": 0.993342,
+          "selection_score": 0.89567
+        },
+        {
+          "coord": [
+            5,
+            3
+          ],
+          "probability": 0.236,
+          "cell_entropy_bits": 0.788325,
+          "expected_info_gain_bits": 0.856762,
+          "selection_score": 0.535867
+        },
+        {
+          "coord": [
+            7,
+            1
+          ],
+          "probability": 0.152,
+          "cell_entropy_bits": 0.614823,
+          "expected_info_gain_bits": 0.614823,
+          "selection_score": 0.367188
+        },
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.136,
+          "cell_entropy_bits": 0.573667,
+          "expected_info_gain_bits": 0.573667,
+          "selection_score": 0.336783
+        }
+      ],
+      "chosen_action": [
+        4,
+        2
+      ],
+      "chosen_prob": 0.78,
+      "chosen_cell_entropy_bits": 0.760168,
+      "chosen_expected_info_gain_bits": 1.476438,
+      "decision_time_ms": 0.576,
+      "percept": {
+        "coord": [
+          4,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 130,
+        "particle_count": 250,
+        "unique_particles": 244,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 895,
+        "mcmc_moves_accepted": 623,
+        "board_entropy_bits": 26.722324,
+        "entropy_reduction_bits": 2.81628,
+        "update_time_ms": 3.471
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 26,
+        "shot_budget": 75,
+        "budget_remaining": 49,
+        "total_hits": 11,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship"
+        ],
+        "remaining_ship_cells": 6,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 27,
+      "available_actions_count": 74,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 244,
+        "hits_count": 11,
+        "misses_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Submarine",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 26.722324
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            3,
+            2
+          ],
+          "probability": 0.844,
+          "cell_entropy_bits": 0.624654,
+          "expected_info_gain_bits": 1.465574,
+          "selection_score": 1.356951
+        },
+        {
+          "coord": [
+            5,
+            3
+          ],
+          "probability": 0.176,
+          "cell_entropy_bits": 0.671248,
+          "expected_info_gain_bits": 0.761147,
+          "selection_score": 0.442401
+        },
+        {
+          "coord": [
+            4,
+            3
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            4,
+            4
+          ],
+          "probability": 0.184,
+          "cell_entropy_bits": 0.68875,
+          "expected_info_gain_bits": 0.68875,
+          "selection_score": 0.425062
+        },
+        {
+          "coord": [
+            7,
+            1
+          ],
+          "probability": 0.116,
+          "cell_entropy_bits": 0.517753,
+          "expected_info_gain_bits": 0.517753,
+          "selection_score": 0.297213
+        }
+      ],
+      "chosen_action": [
+        3,
+        2
+      ],
+      "chosen_prob": 0.844,
+      "chosen_cell_entropy_bits": 0.624654,
+      "chosen_expected_info_gain_bits": 1.465574,
+      "decision_time_ms": 0.533,
+      "percept": {
+        "coord": [
+          3,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": "Submarine"
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 98,
+        "particle_count": 250,
+        "unique_particles": 243,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 608,
+        "mcmc_moves_accepted": 598,
+        "board_entropy_bits": 25.721729,
+        "entropy_reduction_bits": 1.000596,
+        "update_time_ms": 5.578
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 27,
+        "shot_budget": 75,
+        "budget_remaining": 48,
+        "total_hits": 12,
+        "total_misses": 15,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 28,
+      "available_actions_count": 73,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 243,
+        "hits_count": 12,
+        "misses_count": 15,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 25.721729
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            8,
+            7
+          ],
+          "probability": 0.128,
+          "cell_entropy_bits": 0.551928,
+          "expected_info_gain_bits": 0.551928,
+          "selection_score": 0.321175
+        },
+        {
+          "coord": [
+            7,
+            1
+          ],
+          "probability": 0.124,
+          "cell_entropy_bits": 0.54075,
+          "expected_info_gain_bits": 0.54075,
+          "selection_score": 0.313263
+        },
+        {
+          "coord": [
+            9,
+            3
+          ],
+          "probability": 0.112,
+          "cell_entropy_bits": 0.505919,
+          "expected_info_gain_bits": 0.505919,
+          "selection_score": 0.289072
+        },
+        {
+          "coord": [
+            1,
+            4
+          ],
+          "probability": 0.104,
+          "cell_entropy_bits": 0.481549,
+          "expected_info_gain_bits": 0.481549,
+          "selection_score": 0.272542
+        },
+        {
+          "coord": [
+            9,
+            6
+          ],
+          "probability": 0.104,
+          "cell_entropy_bits": 0.481549,
+          "expected_info_gain_bits": 0.481549,
+          "selection_score": 0.272542
+        }
+      ],
+      "chosen_action": [
+        8,
+        7
+      ],
+      "chosen_prob": 0.128,
+      "chosen_cell_entropy_bits": 0.551928,
+      "chosen_expected_info_gain_bits": 0.551928,
+      "decision_time_ms": 0.61,
+      "percept": {
+        "coord": [
+          8,
+          7
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "SMC",
+        "survived_particles": 218,
+        "particle_count": 250,
+        "unique_particles": 239,
+        "rejuvenated": true,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 64,
+        "mcmc_moves_accepted": 63,
+        "board_entropy_bits": 25.593853,
+        "entropy_reduction_bits": 0.127875,
+        "update_time_ms": 4.366
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 28,
+        "shot_budget": 75,
+        "budget_remaining": 47,
+        "total_hits": 12,
+        "total_misses": 16,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 5,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 29,
+      "available_actions_count": 72,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "SMC",
+        "particle_count": 250,
+        "unique_particles": 239,
+        "hits_count": 12,
+        "misses_count": 16,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 25.593853
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            1
+          ],
+          "probability": 0.124,
+          "cell_entropy_bits": 0.54075,
+          "expected_info_gain_bits": 0.54075,
+          "selection_score": 0.313263
+        },
+        {
+          "coord": [
+            1,
+            0
+          ],
+          "probability": 0.112,
+          "cell_entropy_bits": 0.505919,
+          "expected_info_gain_bits": 0.505919,
+          "selection_score": 0.289072
+        },
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.112,
+          "cell_entropy_bits": 0.505919,
+          "expected_info_gain_bits": 0.505919,
+          "selection_score": 0.289072
+        },
+        {
+          "coord": [
+            9,
+            3
+          ],
+          "probability": 0.112,
+          "cell_entropy_bits": 0.505919,
+          "expected_info_gain_bits": 0.505919,
+          "selection_score": 0.289072
+        },
+        {
+          "coord": [
+            9,
+            6
+          ],
+          "probability": 0.112,
+          "cell_entropy_bits": 0.505919,
+          "expected_info_gain_bits": 0.505919,
+          "selection_score": 0.289072
+        }
+      ],
+      "chosen_action": [
+        7,
+        1
+      ],
+      "chosen_prob": 0.124,
+      "chosen_cell_entropy_bits": 0.54075,
+      "chosen_expected_info_gain_bits": 0.54075,
+      "decision_time_ms": 0.602,
+      "percept": {
+        "coord": [
+          7,
+          1
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 31,
+        "particle_count": 521,
+        "unique_particles": 521,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 19.005154,
+        "entropy_reduction_bits": 6.5887,
+        "update_time_ms": 1.719
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 29,
+        "shot_budget": 75,
+        "budget_remaining": 46,
+        "total_hits": 13,
+        "total_misses": 16,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 4,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 30,
+      "available_actions_count": 71,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 521,
+        "unique_particles": 521,
+        "hits_count": 13,
+        "misses_count": 16,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 19.005154
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            2
+          ],
+          "probability": 0.414587,
+          "cell_entropy_bits": 0.978847,
+          "expected_info_gain_bits": 1.299108,
+          "selection_score": 0.869275
+        },
+        {
+          "coord": [
+            8,
+            1
+          ],
+          "probability": 0.414587,
+          "cell_entropy_bits": 0.978847,
+          "expected_info_gain_bits": 1.299108,
+          "selection_score": 0.869275
+        },
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.274472,
+          "cell_entropy_bits": 0.847809,
+          "expected_info_gain_bits": 1.096535,
+          "selection_score": 0.658259
+        },
+        {
+          "coord": [
+            6,
+            1
+          ],
+          "probability": 0.257198,
+          "cell_entropy_bits": 0.822488,
+          "expected_info_gain_bits": 1.066129,
+          "selection_score": 0.630343
+        },
+        {
+          "coord": [
+            9,
+            1
+          ],
+          "probability": 0.18618,
+          "cell_entropy_bits": 0.693412,
+          "expected_info_gain_bits": 0.693412,
+          "selection_score": 0.428875
+        }
+      ],
+      "chosen_action": [
+        7,
+        2
+      ],
+      "chosen_prob": 0.414587,
+      "chosen_cell_entropy_bits": 0.978847,
+      "chosen_expected_info_gain_bits": 1.299108,
+      "decision_time_ms": 0.836,
+      "percept": {
+        "coord": [
+          7,
+          2
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 167,
+        "particle_count": 167,
+        "unique_particles": 167,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 14.819705,
+        "entropy_reduction_bits": 4.185448,
+        "update_time_ms": 0.872
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 30,
+        "shot_budget": 75,
+        "budget_remaining": 45,
+        "total_hits": 14,
+        "total_misses": 16,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 3,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 31,
+      "available_actions_count": 70,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 167,
+        "unique_particles": 167,
+        "hits_count": 14,
+        "misses_count": 16,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 14.819705
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            3
+          ],
+          "probability": 0.51497,
+          "cell_entropy_bits": 0.999353,
+          "expected_info_gain_bits": 1.128278,
+          "selection_score": 0.909868
+        },
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 0.502994,
+          "cell_entropy_bits": 0.999974,
+          "expected_info_gain_bits": 1.081623,
+          "selection_score": 0.881562
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.047904,
+          "cell_entropy_bits": 0.277427,
+          "expected_info_gain_bits": 0.277427,
+          "selection_score": 0.145003
+        },
+        {
+          "coord": [
+            9,
+            1
+          ],
+          "probability": 0.041916,
+          "cell_entropy_bits": 0.25101,
+          "expected_info_gain_bits": 0.25101,
+          "selection_score": 0.12977
+        },
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.035928,
+          "cell_entropy_bits": 0.223301,
+          "expected_info_gain_bits": 0.223301,
+          "selection_score": 0.114083
+        }
+      ],
+      "chosen_action": [
+        7,
+        3
+      ],
+      "chosen_prob": 0.51497,
+      "chosen_cell_entropy_bits": 0.999353,
+      "chosen_expected_info_gain_bits": 1.128278,
+      "decision_time_ms": 0.36,
+      "percept": {
+        "coord": [
+          7,
+          3
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 81,
+        "particle_count": 81,
+        "unique_particles": 81,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 12.903112,
+        "entropy_reduction_bits": 1.916594,
+        "update_time_ms": 0.55
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 31,
+        "shot_budget": 75,
+        "budget_remaining": 44,
+        "total_hits": 14,
+        "total_misses": 17,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine"
+        ],
+        "remaining_ship_cells": 3,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 32,
+      "available_actions_count": 69,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 81,
+        "unique_particles": 81,
+        "hits_count": 14,
+        "misses_count": 17,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Cruiser",
+          "Destroyer"
+        ],
+        "board_entropy_bits": 12.903112
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            7,
+            0
+          ],
+          "probability": 1.0,
+          "cell_entropy_bits": 0.0,
+          "expected_info_gain_bits": 0.0,
+          "selection_score": 10.0
+        },
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.049383,
+          "cell_entropy_bits": 0.283769,
+          "expected_info_gain_bits": 0.283769,
+          "selection_score": 0.049383
+        },
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.037037
+        },
+        {
+          "coord": [
+            0,
+            2
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.037037
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.037037
+        }
+      ],
+      "chosen_action": [
+        7,
+        0
+      ],
+      "chosen_prob": 1.0,
+      "chosen_cell_entropy_bits": 0.0,
+      "chosen_expected_info_gain_bits": 0.0,
+      "decision_time_ms": 0.317,
+      "percept": {
+        "coord": [
+          7,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": "Cruiser"
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 81,
+        "particle_count": 81,
+        "unique_particles": 81,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 12.903112,
+        "entropy_reduction_bits": 0.0,
+        "update_time_ms": 0.353
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 32,
+        "shot_budget": 75,
+        "budget_remaining": 43,
+        "total_hits": 15,
+        "total_misses": 17,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 2,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 33,
+      "available_actions_count": 68,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 81,
+        "unique_particles": 81,
+        "hits_count": 15,
+        "misses_count": 17,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Destroyer"
+        ],
+        "board_entropy_bits": 12.903112
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            1
+          ],
+          "probability": 0.049383,
+          "cell_entropy_bits": 0.283769,
+          "expected_info_gain_bits": 0.283769,
+          "selection_score": 0.148702
+        },
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.117025
+        },
+        {
+          "coord": [
+            0,
+            2
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.117025
+        },
+        {
+          "coord": [
+            0,
+            3
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.117025
+        },
+        {
+          "coord": [
+            0,
+            4
+          ],
+          "probability": 0.037037,
+          "cell_entropy_bits": 0.228538,
+          "expected_info_gain_bits": 0.228538,
+          "selection_score": 0.117025
+        }
+      ],
+      "chosen_action": [
+        1,
+        1
+      ],
+      "chosen_prob": 0.049383,
+      "chosen_cell_entropy_bits": 0.283769,
+      "chosen_expected_info_gain_bits": 0.283769,
+      "decision_time_ms": 0.189,
+      "percept": {
+        "coord": [
+          1,
+          1
+        ],
+        "hit": true,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 4,
+        "particle_count": 4,
+        "unique_particles": 4,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 3.245112,
+        "entropy_reduction_bits": 9.657999,
+        "update_time_ms": 0.211
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 33,
+        "shot_budget": 75,
+        "budget_remaining": 42,
+        "total_hits": 16,
+        "total_misses": 17,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 1,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 34,
+      "available_actions_count": 67,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 4,
+        "unique_particles": 4,
+        "hits_count": 16,
+        "misses_count": 17,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Destroyer"
+        ],
+        "board_entropy_bits": 3.245112
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            0,
+            1
+          ],
+          "probability": 0.25,
+          "cell_entropy_bits": 0.811278,
+          "expected_info_gain_bits": 0.811278,
+          "selection_score": 0.533947
+        },
+        {
+          "coord": [
+            1,
+            0
+          ],
+          "probability": 0.25,
+          "cell_entropy_bits": 0.811278,
+          "expected_info_gain_bits": 0.811278,
+          "selection_score": 0.533947
+        },
+        {
+          "coord": [
+            1,
+            2
+          ],
+          "probability": 0.25,
+          "cell_entropy_bits": 0.811278,
+          "expected_info_gain_bits": 0.811278,
+          "selection_score": 0.533947
+        },
+        {
+          "coord": [
+            2,
+            1
+          ],
+          "probability": 0.25,
+          "cell_entropy_bits": 0.811278,
+          "expected_info_gain_bits": 0.811278,
+          "selection_score": 0.533947
+        },
+        {
+          "coord": [
+            0,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0,
+          "expected_info_gain_bits": 0.0,
+          "selection_score": 0.0
+        }
+      ],
+      "chosen_action": [
+        0,
+        1
+      ],
+      "chosen_prob": 0.25,
+      "chosen_cell_entropy_bits": 0.811278,
+      "chosen_expected_info_gain_bits": 0.811278,
+      "decision_time_ms": 0.116,
+      "percept": {
+        "coord": [
+          0,
+          1
+        ],
+        "hit": false,
+        "sunk_ship": null
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 3,
+        "particle_count": 3,
+        "unique_particles": 3,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 2.754888,
+        "entropy_reduction_bits": 0.490225,
+        "update_time_ms": 0.09
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 34,
+        "shot_budget": 75,
+        "budget_remaining": 41,
+        "total_hits": 16,
+        "total_misses": 18,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine",
+          "Cruiser"
+        ],
+        "remaining_ship_cells": 1,
+        "status": "RUNNING"
+      }
+    },
+    {
+      "step": 35,
+      "available_actions_count": 66,
+      "belief_before": {
+        "agent": "smc_info_gain",
+        "policy": "info_gain",
+        "optimized_mcmc": true,
+        "mode": "EXACT_FALLBACK",
+        "particle_count": 3,
+        "unique_particles": 3,
+        "hits_count": 16,
+        "misses_count": 18,
+        "sunk_ships": [
+          "Battleship",
+          "Carrier",
+          "Cruiser",
+          "Submarine"
+        ],
+        "remaining_ships": [
+          "Destroyer"
+        ],
+        "board_entropy_bits": 2.754888
+      },
+      "top_candidates": [
+        {
+          "coord": [
+            1,
+            0
+          ],
+          "probability": 0.333333,
+          "cell_entropy_bits": 0.918296,
+          "expected_info_gain_bits": 0.918296,
+          "selection_score": 0.654737
+        },
+        {
+          "coord": [
+            1,
+            2
+          ],
+          "probability": 0.333333,
+          "cell_entropy_bits": 0.918296,
+          "expected_info_gain_bits": 0.918296,
+          "selection_score": 0.654737
+        },
+        {
+          "coord": [
+            2,
+            1
+          ],
+          "probability": 0.333333,
+          "cell_entropy_bits": 0.918296,
+          "expected_info_gain_bits": 0.918296,
+          "selection_score": 0.654737
+        },
+        {
+          "coord": [
+            0,
+            0
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0,
+          "expected_info_gain_bits": 0.0,
+          "selection_score": 0.0
+        },
+        {
+          "coord": [
+            0,
+            2
+          ],
+          "probability": 0.0,
+          "cell_entropy_bits": 0.0,
+          "expected_info_gain_bits": 0.0,
+          "selection_score": 0.0
+        }
+      ],
+      "chosen_action": [
+        1,
+        0
+      ],
+      "chosen_prob": 0.333333,
+      "chosen_cell_entropy_bits": 0.918296,
+      "chosen_expected_info_gain_bits": 0.918296,
+      "decision_time_ms": 0.143,
+      "percept": {
+        "coord": [
+          1,
+          0
+        ],
+        "hit": true,
+        "sunk_ship": "Destroyer"
+      },
+      "belief_after": {
+        "mode": "EXACT_FALLBACK",
+        "survived_particles": 1,
+        "particle_count": 1,
+        "unique_particles": 1,
+        "rejuvenated": false,
+        "repair_triggered": false,
+        "mcmc_moves_attempted": 0,
+        "mcmc_moves_accepted": 0,
+        "board_entropy_bits": 0,
+        "entropy_reduction_bits": 2.754888,
+        "update_time_ms": 0.042
+      },
+      "env_effect": {
+        "rows": 10,
+        "cols": 10,
+        "shots_taken": 35,
+        "shot_budget": 75,
+        "budget_remaining": 40,
+        "total_hits": 17,
+        "total_misses": 18,
+        "sunk_ships": [
+          "Carrier",
+          "Battleship",
+          "Submarine",
+          "Cruiser",
+          "Destroyer"
+        ],
+        "remaining_ship_cells": 0,
+        "status": "VICTORY"
+      }
+    }
+  ]
+}

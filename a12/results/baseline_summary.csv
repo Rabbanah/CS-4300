@@ -1,0 +1,8 @@
+case_id,category,agent,status,success,shots_taken,shot_budget,hits,total_ship_cells,hit_rate,mean_step_latency_ms,max_step_latency_ms,mean_entropy_reduction_bits,rejuvenation_events,repair_events,exact_fallback_step,error_message
+case_01_standard_seed4300,Representative Supported,smc_max_prob,VICTORY,True,52,75,17,17,0.3269,11.432,49.407,1.243,27,0,28,
+case_02_corner_clustered_boundary,Adversarial Boundary,smc_max_prob,VICTORY,True,56,75,17,17,0.3036,6.906,30.79,1.1542,33,0,35,
+case_03_tight_budget_timeout,Unsuccessful (Timeout),smc_max_prob,TIMEOUT,False,30,30,12,17,0.4,12.726,33.951,1.3231,27,0,29,
+case_04_unsupported_config,Unsupported Input,smc,INVALID_CONFIG,False,0,16,0,17,0.0,0.0,0.0,0.0,0,0,,Ship 'Carrier' (length 5) cannot fit on a 4x4 grid.
+case_05_corrupted_sensor_collapse,Expected Failure (Collapse),smc_max_prob,BELIEF_COLLAPSE,False,1,36,0,5,0.0,0.019,0.019,0.0,0,0,0,"Belief state collapsed after ShotResult(coord=(2, 2), hit=True, sunk_ship='Cruiser'): at least one ship has zero consistent placements."
+ref_01_hunt_target_seed4300,Reference Baseline,hunt_target,VICTORY,True,72,75,17,17,0.2361,0.001,0.005,0.0,0,0,,
+ref_02_hunt_target_corner_clustered,Reference Baseline,hunt_target,VICTORY,True,54,75,17,17,0.3148,0.001,0.002,0.0,0,0,,

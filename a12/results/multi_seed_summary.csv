@@ -1,0 +1,6 @@
+agent,episodes,win_rate_b75,win_rate_b60,win_rate_b50,mean_shots,median_shots,std_shots,min_shots,max_shots,shots_ci95_low,shots_ci95_high,mean_hit_rate,mean_step_latency_ms,p95_step_latency_ms,peak_step_latency_ms,steps_over_50ms,total_steps,mean_episode_time_ms,mean_mcmc_moves,total_repairs,collapses
+random,30,0.0,0.0,0.0,75.0,75.0,0.0,75,75,75.0,75.0,0.1693,0.0,0.0,0.006,0,2250,0.03,0.0,0,0
+hunt_target,30,0.9667,0.3333,0.1,63.03,64.0,7.95,41,75,60.13,65.83,0.2742,0.001,0.003,0.021,0,1891,0.07,0.0,0,0
+smc_baseline,30,1.0,0.9667,0.7333,44.43,44.0,7.88,31,62,41.83,47.33,0.3943,12.857,46.434,73.805,45,1333,571.27,43432.2,0,0
+smc_refined,30,1.0,1.0,0.9,42.97,43.0,6.29,31,55,40.87,45.1,0.4043,2.671,7.6,26.057,0,1289,114.75,21771.2,0,0
+smc_info_gain,30,1.0,0.9667,0.8,44.47,44.0,8.39,26,62,41.63,47.53,0.3967,3.261,9.856,34.463,0,1334,144.99,21247.4,0,0
